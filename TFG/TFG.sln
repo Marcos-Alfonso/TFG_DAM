@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33423.256
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG", "TFG\TFG.csproj", "{FF787B23-8053-4755-A960-A16E74CD61EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF787B23-8053-4755-A960-A16E74CD61EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF787B23-8053-4755-A960-A16E74CD61EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF787B23-8053-4755-A960-A16E74CD61EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF787B23-8053-4755-A960-A16E74CD61EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12B959CC-0253-4C0F-95E9-7BECF4A42819}
+	EndGlobalSection
+EndGlobal
