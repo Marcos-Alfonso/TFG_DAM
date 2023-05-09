@@ -30,13 +30,17 @@ namespace TFG
         public Form1()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            
             //this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width-(Screen.PrimaryScreen.WorkingArea.Width/2), 0);
             //abro conexión y la cierro cuando se cierre la aplicación
             //c = new MySqlConnection("server=127.0.0.1;uid=root;pwd=root;database=gestiona");
+
             c = new MySqlConnection("server=sql7.freemysqlhosting.net;uid=sql7606247;pwd=dduU845xle;database=sql7606247");
+            //c = new MySqlConnection("server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso");
             c.Open();
             this.Closed += (s, args) => c.Close();
+
+            
 
             String query = "SELECT * FROM cliente";
             adapterAll = new MySqlDataAdapter(query, c);
@@ -53,9 +57,11 @@ namespace TFG
 
 
 
+
             iniciaTablaFiltro();
             iniciaAdmod();
 
+            this.WindowState = FormWindowState.Maximized;
             dtClientes.ClearSelection();
         }
 
@@ -158,14 +164,12 @@ namespace TFG
 
         private void cambioResize(object sender, EventArgs e)
         {
+            try
+            {
 
+            
             if (this.WindowState == FormWindowState.Maximized)
             {
-                /*
-                tableLayoutPanel1.RowStyles[0].Height = 10F;
-                tableLayoutPanel1.RowStyles[1].Height = 20F;
-                tableLayoutPanel1.RowStyles[2].Height = 80F;
-                */
                 dtClientes.Columns["direccion"].Visible = true;
                 dtClientes.Columns["municipio"].Visible = true;
                 dtClientes.Columns["provincia"].Visible = true;
@@ -178,13 +182,13 @@ namespace TFG
                 dtClientes.Columns["municipio"].Visible = false;
                 dtClientes.Columns["provincia"].Visible = false;
                 dtClientes.Columns["codigo_postal"].Visible = false;
-                /*
-                tableLayoutPanel1.RowStyles[0].Height = 30F;
-                tableLayoutPanel1.RowStyles[1].Height = 20F;
-                tableLayoutPanel1.RowStyles[2].Height = 50F;
-                */
             }
+            }
+            catch (Exception)
+            {
 
+               
+            }
             //compruebo como estaba el filtro, añadir/modificar porque se mueve al cambiar el tamaño
             if (splitContainer2.Panel2Collapsed)
             {
@@ -344,6 +348,36 @@ namespace TFG
             splitContainer1.SplitterDistance = 200;
             splitContainer2.Panel1Collapsed = true;
             splitContainer2.Panel2Collapsed = false;
+        }
+
+        private void cambioFiltro(object sender, DataGridViewCellEventArgs e)
+        {
+            string query = "SELECT * FROM cliente WHERE ";
+            foreach(DataGridViewColumn col in dtFiltro.Columns)
+            {
+                query += $"{col.HeaderText} LIKE '%{dtFiltro.Rows[0].Cells[col.Name].Value}%' ";
+
+                //solo añado and al final si no es la ultima iteracion
+                if (!(col == dtFiltro.Columns[dtFiltro.Columns.Count - 1]))
+                {
+                    query += "AND ";
+                }
+                
+
+            }
+
+            adapterAll = new MySqlDataAdapter(query, c);
+            adapterAll.Fill(ds, "cliente");
+            MySqlCommandBuilder cb = new MySqlCommandBuilder(adapterAll);
+
+            dtClientes.DataSource = ds;
+            dtClientes.DataMember = "cliente";
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formCalendario f1 = new formCalendario();
+            f1.Show();
         }
     }
 

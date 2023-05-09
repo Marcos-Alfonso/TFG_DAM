@@ -68,6 +68,7 @@ namespace TFG
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -81,18 +82,19 @@ namespace TFG
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dtClientes);
-            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 22);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 27);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer1.Size = new System.Drawing.Size(1162, 579);
-            this.splitContainer1.SplitterDistance = 216;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(1549, 713);
+            this.splitContainer1.SplitterDistance = 265;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 38);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -104,8 +106,9 @@ namespace TFG
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer2.Size = new System.Drawing.Size(1162, 178);
-            this.splitContainer2.SplitterDistance = 566;
+            this.splitContainer2.Size = new System.Drawing.Size(1549, 227);
+            this.splitContainer2.SplitterDistance = 754;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 1;
             // 
             // dtFiltro
@@ -118,23 +121,27 @@ namespace TFG
             this.dtFiltro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtFiltro.Location = new System.Drawing.Point(0, 0);
+            this.dtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.dtFiltro.Name = "dtFiltro";
+            this.dtFiltro.RowHeadersWidth = 51;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dtFiltro.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtFiltro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtFiltro.Size = new System.Drawing.Size(566, 178);
+            this.dtFiltro.Size = new System.Drawing.Size(754, 227);
             this.dtFiltro.TabIndex = 0;
+            this.dtFiltro.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cambioFiltro);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(592, 178);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(790, 227);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // menuStrip1
@@ -154,7 +161,7 @@ namespace TFG
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuStrip1.ShowItemToolTips = true;
-            this.menuStrip1.Size = new System.Drawing.Size(1162, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1549, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -203,7 +210,7 @@ namespace TFG
             // 
             this.filtroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("filtroToolStripMenuItem.Image")));
             this.filtroToolStripMenuItem.Name = "filtroToolStripMenuItem";
-            this.filtroToolStripMenuItem.Size = new System.Drawing.Size(42, 34);
+            this.filtroToolStripMenuItem.Size = new System.Drawing.Size(44, 34);
             this.filtroToolStripMenuItem.ToolTipText = "Filtro";
             this.filtroToolStripMenuItem.Click += new System.EventHandler(this.abreFiltro);
             // 
@@ -217,6 +224,7 @@ namespace TFG
             this.toolStripMenuItem1.Size = new System.Drawing.Size(42, 34);
             this.toolStripMenuItem1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.toolStripMenuItem1.ToolTipText = "Citas";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // dtClientes
             // 
@@ -239,29 +247,33 @@ namespace TFG
             this.dtClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dtClientes.Location = new System.Drawing.Point(0, 0);
+            this.dtClientes.Margin = new System.Windows.Forms.Padding(4);
             this.dtClientes.Name = "dtClientes";
+            this.dtClientes.RowHeadersWidth = 51;
             this.dtClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtClientes.Size = new System.Drawing.Size(1162, 336);
+            this.dtClientes.Size = new System.Drawing.Size(1549, 415);
             this.dtClientes.TabIndex = 0;
             this.dtClientes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cambioGrid);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
             this.toolStripStatusLabel1,
             this.toolStripStatusError,
             this.toolStripStatusRegistro});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 557);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 691);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1162, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1549, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(133, 17);
             this.toolStripProgressBar1.Visible = false;
             // 
             // toolStripStatusLabel1
@@ -270,7 +282,7 @@ namespace TFG
             this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
             this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(16, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(20, 20);
             this.toolStripStatusLabel1.Visible = false;
             // 
             // toolStripStatusError
@@ -279,24 +291,25 @@ namespace TFG
             this.toolStripStatusError.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusError.Image")));
             this.toolStripStatusError.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.toolStripStatusError.Name = "toolStripStatusError";
-            this.toolStripStatusError.Size = new System.Drawing.Size(16, 17);
+            this.toolStripStatusError.Size = new System.Drawing.Size(20, 20);
             this.toolStripStatusError.Visible = false;
             // 
             // toolStripStatusRegistro
             // 
             this.toolStripStatusRegistro.Name = "toolStripStatusRegistro";
-            this.toolStripStatusRegistro.Size = new System.Drawing.Size(0, 17);
+            this.toolStripStatusRegistro.Size = new System.Drawing.Size(0, 16);
             this.toolStripStatusRegistro.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 579);
+            this.ClientSize = new System.Drawing.Size(1549, 713);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.splitContainer1);
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "AAGestor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.closing);
