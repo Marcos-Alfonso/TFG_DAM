@@ -62,6 +62,9 @@ namespace TFG
             iniciaAdmod();
 
             this.WindowState = FormWindowState.Maximized;
+
+            cambioResize(null, null);
+            splitContainer1.SplitterDistance = splitterSize["cerrado"]+12;
             dtClientes.ClearSelection();
         }
 
@@ -73,22 +76,29 @@ namespace TFG
             int anchoTextBox = 250;
             int alturaControl = 25;
 
+            Panel panel = new Panel();
+
+            agregaTitulosFlow();
             // Agrega los controles al FlowLayoutPanel
             foreach (DataGridViewColumn columna in dtClientes.Columns)
             {
                 Label label = new Label();
-                label.Text = columna.HeaderText;
+                //El nombre de la columna no debe mostrar los carácteres "_"
+                string nombreColumna = columna.HeaderText.Replace("_", " ");
+
+                label.Text = nombreColumna+":";
+
                 label.Width = anchoLabel;
                 label.Height = alturaControl;
-
+                label.TextAlign = ContentAlignment.MiddleCenter;
                 TextBox textBox = new TextBox();
                 textBox.Width = anchoTextBox;
                 textBox.Height = alturaControl;
 
                 // Crea un Panel para contener el par de controles
-                Panel panel = new Panel();
+                panel = new Panel();
                 panel.Width = anchoLabel + anchoTextBox + 10;
-                panel.BackColor = Color.White;
+                //panel.BackColor = Color.White;
                 panel.Height = alturaControl;
                 panel.Controls.Add(label);
                 panel.Controls.Add(textBox);
@@ -98,57 +108,58 @@ namespace TFG
                 panel.AutoSize = true;
 
             }
+            flowLayoutPanel1.SetFlowBreak(panel, true);
+
+            Button btnAceptar = new Button();
+            btnAceptar.Text = "Aceptar";
+            flowLayoutPanel1.Controls.Add(btnAceptar);
+        }
+        Panel panelAlta = new Panel();
+        Panel panelMod = new Panel();
+        private void agregaTitulosFlow()
+        {
+            panelAlta = new Panel();
+            panelAlta.BackColor = ColorTranslator.FromHtml("#94d82d");
+            panelAlta.Size = new Size(100, 50);
+            flowLayoutPanel1.Controls.Add(panelAlta);
+
+            Label labelAlta = new Label();
+            labelAlta.Text = "ALTA";
+            labelAlta.Font = new Font("Arial", 18, FontStyle.Bold);
+            labelAlta.ForeColor = Color.White;
+            labelAlta.Dock = DockStyle.Fill;
+            labelAlta.TextAlign = ContentAlignment.MiddleCenter;
+            panelAlta.Controls.Add(labelAlta);
+
+            // Añadir el Panel al FlowLayoutPanel
+            flowLayoutPanel1.Controls.Add(panelAlta);
+            flowLayoutPanel1.SetFlowBreak(panelAlta, true);
+
+            panelMod = new Panel();
+            panelMod.BackColor = ColorTranslator.FromHtml("#fcc419");
+            panelMod.Size = new Size(180, 50);
+            
+            flowLayoutPanel1.Controls.Add(panelMod);
+
+            Label labelMod = new Label();
+            labelMod.Text = "Modificación";
+            labelMod.Font = new Font("Arial", 18, FontStyle.Bold);
+            labelMod.ForeColor = Color.White;
+            labelMod.Dock = DockStyle.Fill;
+            labelMod.TextAlign = ContentAlignment.MiddleCenter;
+            panelMod.Controls.Add(labelMod);
+
+            // Añadir el Panel al FlowLayoutPanel
+            flowLayoutPanel1.Controls.Add(panelMod);
+            flowLayoutPanel1.SetFlowBreak(panelMod, true);
 
 
-            /*
-            // Define el ancho y la altura de los controles
-            int anchoLabel = 100;
-            int anchoTextBox = 150;
-            int alturaControl = 25;
-
-            // Define la posición inicial de los controles
-            int x = 10;
-            int y = 10;
-            int i = 1;
-
-            // Agrega los controles al panel
-            foreach (DataGridViewColumn columna in dtClientes.Columns)
-            {
-                // Crea el Label
-                Label label = new Label();
-                label.Text = columna.HeaderText;
-                label.Width = anchoLabel;
-                label.Height = alturaControl;
-                if (i%2==0)
-                    label.Location = new Point(x+400, y);
-                else
-                    label.Location = new Point(x, y);
-                panelAdmod.Controls.Add(label);
-
-                // Crea el TextBox
-                TextBox textBox = new TextBox();
-                textBox.Width = anchoTextBox;
-                textBox.Height = alturaControl;
-
-                if(i%2 == 0)
-                textBox.Location = new Point(x + anchoLabel + 410, y);
-                else
-                textBox.Location = new Point(x + anchoLabel + 10, y);
-                panelAdmod.Controls.Add(textBox);
-
-                if (i % 2 == 0)
-                {
-                    y += alturaControl + 10;
-                }
-                
-                i ++;
-            }
-            */
+            panelAlta.Visible = false;
+            panelMod.Visible = false;
         }
 
         private void iniciaTablaFiltro()
         {
-
 
             foreach (DataGridViewColumn col in dtClientes.Columns)
             {
@@ -156,9 +167,6 @@ namespace TFG
                 // dtFiltro.Columns[index].FillWeight = col.FillWeight;
             }
             dtFiltro.Rows.Add();
-
-
-
 
         }
 
@@ -169,22 +177,25 @@ namespace TFG
 
             
             if (this.WindowState == FormWindowState.Maximized)
-            {
+            {/*
                 dtClientes.Columns["direccion"].Visible = true;
                 dtClientes.Columns["municipio"].Visible = true;
                 dtClientes.Columns["provincia"].Visible = true;
-                dtClientes.Columns["codigo_postal"].Visible = true;
+                dtClientes.Columns["codigo_postal"].Visible = true;*/
                 splitContainer1.SplitterDistance = splitterSize["cerrado"];
             }
             else
             {
+                    /*
                 dtClientes.Columns["direccion"].Visible = false;
                 dtClientes.Columns["municipio"].Visible = false;
                 dtClientes.Columns["provincia"].Visible = false;
                 dtClientes.Columns["codigo_postal"].Visible = false;
+                    */
+                }
+
             }
-            }
-            catch (Exception)
+            catch (Exception notFound)
             {
 
                
@@ -197,7 +208,12 @@ namespace TFG
             }
             else if (splitContainer2.Panel1Collapsed)
             {
-                splitContainer1.SplitterDistance = splitterSize["admod"];
+                
+                while (flowLayoutPanel1.VerticalScroll.Visible)
+                {
+                    splitContainer1.SplitterDistance += 10;
+                }
+                splitContainer1.SplitterDistance += 15;
             }
 
         }
@@ -326,28 +342,40 @@ namespace TFG
             {
                 splitContainer1.SplitterDistance = splitterSize["cerrado"];
                 splitContainer2.Panel2Collapsed = false;
+                dtClientes.DataSource = ds;
                 return;
             }
 
             splitContainer1.SplitterDistance = splitterSize["filtro"];
             splitContainer2.Panel2Collapsed = true;
             splitContainer2.Panel1Collapsed = false;
+            cambioFiltro(null, null);
         }
 
         private void abreAdmod(object sender, EventArgs e)
         {
-            /*
+            
             if (splitContainer2.Panel1Collapsed)
             {
                 splitContainer1.SplitterDistance = splitterSize["cerrado"];
-                splitContainer1.Panel1Collapsed = false;
+                splitContainer2.Panel1Collapsed = false;
                 return;
             }
-            */
 
-            splitContainer1.SplitterDistance = 200;
+            ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
+            if (menuItem != null && menuItem.Name == "altaToolStripMenuItem")
+            {
+                panelAlta.Visible = true;
+            }
+
             splitContainer2.Panel1Collapsed = true;
             splitContainer2.Panel2Collapsed = false;
+            while (flowLayoutPanel1.VerticalScroll.Visible)
+            {
+                splitContainer1.SplitterDistance += 5;
+            }
+            splitContainer1.SplitterDistance += 15;
+
         }
 
         private void cambioFiltro(object sender, DataGridViewCellEventArgs e)
@@ -366,12 +394,14 @@ namespace TFG
 
             }
 
-            adapterAll = new MySqlDataAdapter(query, c);
-            adapterAll.Fill(ds, "cliente");
-            MySqlCommandBuilder cb = new MySqlCommandBuilder(adapterAll);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, c);
+            DataSet dsFiltro = new DataSet();
+            adapter.Fill(dsFiltro, "cliente");
+            MySqlCommandBuilder cb = new MySqlCommandBuilder(adapter);
 
-            dtClientes.DataSource = ds;
+            dtClientes.DataSource = dsFiltro;
             dtClientes.DataMember = "cliente";
+            dtClientes.Refresh();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

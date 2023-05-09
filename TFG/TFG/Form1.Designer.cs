@@ -106,6 +106,7 @@ namespace TFG
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer2.Panel2Collapsed = true;
             this.splitContainer2.Size = new System.Drawing.Size(1549, 227);
             this.splitContainer2.SplitterDistance = 754;
             this.splitContainer2.SplitterWidth = 5;
@@ -129,7 +130,7 @@ namespace TFG
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dtFiltro.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtFiltro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtFiltro.Size = new System.Drawing.Size(754, 227);
+            this.dtFiltro.Size = new System.Drawing.Size(1549, 227);
             this.dtFiltro.TabIndex = 0;
             this.dtFiltro.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cambioFiltro);
             // 
@@ -313,8 +314,8 @@ namespace TFG
             this.Name = "Form1";
             this.Text = "AAGestor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.closing);
+            this.ResizeEnd += new System.EventHandler(this.cambioResize);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            this.Resize += new System.EventHandler(this.cambioResize);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
