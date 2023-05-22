@@ -29,10 +29,10 @@ namespace TFG
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dtFiltro = new System.Windows.Forms.DataGridView();
@@ -40,7 +40,7 @@ namespace TFG
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +50,8 @@ namespace TFG
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusError = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusRegistro = new System.Windows.Forms.ToolStripStatusLabel();
+            this.verTodasLasCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,8 +77,10 @@ namespace TFG
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
+            this.splitContainer1.Panel1.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
             this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer1.Panel1Collapsed = true;
             this.splitContainer1.Panel1MinSize = 38;
             // 
             // splitContainer1.Panel2
@@ -86,14 +90,14 @@ namespace TFG
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Size = new System.Drawing.Size(1549, 713);
-            this.splitContainer1.SplitterDistance = 265;
+            this.splitContainer1.SplitterDistance = 38;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 38);
+            this.splitContainer2.Location = new System.Drawing.Point(0, 50);
             this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer2.Name = "splitContainer2";
             // 
@@ -106,8 +110,7 @@ namespace TFG
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer2.Panel2Collapsed = true;
-            this.splitContainer2.Size = new System.Drawing.Size(1549, 227);
+            this.splitContainer2.Size = new System.Drawing.Size(1549, 0);
             this.splitContainer2.SplitterDistance = 754;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 1;
@@ -125,12 +128,12 @@ namespace TFG
             this.dtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.dtFiltro.Name = "dtFiltro";
             this.dtFiltro.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtFiltro.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtFiltro.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dtFiltro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtFiltro.Size = new System.Drawing.Size(1549, 227);
+            this.dtFiltro.Size = new System.Drawing.Size(754, 0);
             this.dtFiltro.TabIndex = 0;
             this.dtFiltro.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cambioFiltro);
             // 
@@ -142,7 +145,7 @@ namespace TFG
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(790, 227);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(790, 0);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // menuStrip1
@@ -152,7 +155,7 @@ namespace TFG
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.altaToolStripMenuItem,
             this.bajaToolStripMenuItem,
-            this.modificaciónToolStripMenuItem,
+            this.modToolStripMenuItem,
             this.guardarToolStripMenuItem,
             this.filtroToolStripMenuItem,
             this.toolStripMenuItem1});
@@ -186,14 +189,15 @@ namespace TFG
             this.bajaToolStripMenuItem.ToolTipText = "Eliminar";
             this.bajaToolStripMenuItem.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
             // 
-            // modificaciónToolStripMenuItem
+            // modToolStripMenuItem
             // 
-            this.modificaciónToolStripMenuItem.AutoSize = false;
-            this.modificaciónToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificaciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("modificaciónToolStripMenuItem.Image")));
-            this.modificaciónToolStripMenuItem.Name = "modificaciónToolStripMenuItem";
-            this.modificaciónToolStripMenuItem.Size = new System.Drawing.Size(42, 34);
-            this.modificaciónToolStripMenuItem.ToolTipText = "Modificar";
+            this.modToolStripMenuItem.AutoSize = false;
+            this.modToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("modToolStripMenuItem.Image")));
+            this.modToolStripMenuItem.Name = "modToolStripMenuItem";
+            this.modToolStripMenuItem.Size = new System.Drawing.Size(42, 34);
+            this.modToolStripMenuItem.ToolTipText = "Modificar";
+            this.modToolStripMenuItem.Click += new System.EventHandler(this.abreAdmod);
             // 
             // guardarToolStripMenuItem
             // 
@@ -218,6 +222,9 @@ namespace TFG
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.AutoSize = false;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verTodasLasCitasToolStripMenuItem,
+            this.verToolStripMenuItem});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -225,7 +232,6 @@ namespace TFG
             this.toolStripMenuItem1.Size = new System.Drawing.Size(42, 34);
             this.toolStripMenuItem1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.toolStripMenuItem1.ToolTipText = "Citas";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // dtClientes
             // 
@@ -233,18 +239,18 @@ namespace TFG
             this.dtClientes.AllowUserToDeleteRows = false;
             this.dtClientes.AllowUserToOrderColumns = true;
             this.dtClientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            this.dtClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Gainsboro;
+            this.dtClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dtClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtClientes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtClientes.DefaultCellStyle = dataGridViewCellStyle21;
             this.dtClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dtClientes.Location = new System.Drawing.Point(0, 0);
@@ -252,7 +258,7 @@ namespace TFG
             this.dtClientes.Name = "dtClientes";
             this.dtClientes.RowHeadersWidth = 51;
             this.dtClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtClientes.Size = new System.Drawing.Size(1549, 415);
+            this.dtClientes.Size = new System.Drawing.Size(1549, 686);
             this.dtClientes.TabIndex = 0;
             this.dtClientes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cambioGrid);
             // 
@@ -301,11 +307,27 @@ namespace TFG
             this.toolStripStatusRegistro.Size = new System.Drawing.Size(0, 16);
             this.toolStripStatusRegistro.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
+            // verTodasLasCitasToolStripMenuItem
+            // 
+            this.verTodasLasCitasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("verTodasLasCitasToolStripMenuItem.Image")));
+            this.verTodasLasCitasToolStripMenuItem.Name = "verTodasLasCitasToolStripMenuItem";
+            this.verTodasLasCitasToolStripMenuItem.Size = new System.Drawing.Size(234, 36);
+            this.verTodasLasCitasToolStripMenuItem.Text = "Ver todas";
+            this.verTodasLasCitasToolStripMenuItem.Click += new System.EventHandler(this.verTodasLasCitasToolStripMenuItem_Click);
+            // 
+            // verToolStripMenuItem
+            // 
+            this.verToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("verToolStripMenuItem.Image")));
+            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(234, 36);
+            this.verToolStripMenuItem.Text = "Ver cliente";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1549, 713);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.splitContainer1);
             this.KeyPreview = true;
@@ -317,7 +339,6 @@ namespace TFG
             this.ResizeEnd += new System.EventHandler(this.cambioResize);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -342,7 +363,7 @@ namespace TFG
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modToolStripMenuItem;
         private System.Windows.Forms.DataGridView dtClientes;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -355,6 +376,8 @@ namespace TFG
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusRegistro;
         private System.Windows.Forms.DataGridView dtFiltro;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ToolStripMenuItem verTodasLasCitasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
     }
 }
 

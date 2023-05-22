@@ -30,17 +30,17 @@ namespace TFG
         public Form1()
         {
             InitializeComponent();
-            
+            this.WindowState = FormWindowState.Maximized;
             //this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width-(Screen.PrimaryScreen.WorkingArea.Width/2), 0);
             //abro conexión y la cierro cuando se cierre la aplicación
             //c = new MySqlConnection("server=127.0.0.1;uid=root;pwd=root;database=gestiona");
-
-            c = new MySqlConnection("server=sql7.freemysqlhosting.net;uid=sql7606247;pwd=dduU845xle;database=sql7606247");
+            c = Program.conn;
+            //c = new MySqlConnection("server=sql7.freemysqlhosting.net;uid=sql7606247;pwd=dduU845xle;database=sql7606247");
             //c = new MySqlConnection("server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso");
-            c.Open();
+            //c.Open();
             this.Closed += (s, args) => c.Close();
 
-            
+
 
             String query = "SELECT * FROM cliente";
             adapterAll = new MySqlDataAdapter(query, c);
@@ -57,15 +57,14 @@ namespace TFG
 
 
 
-
             iniciaTablaFiltro();
             iniciaAdmod();
 
-            this.WindowState = FormWindowState.Maximized;
 
-            cambioResize(null, null);
-            splitContainer1.SplitterDistance = splitterSize["cerrado"]+12;
-            dtClientes.ClearSelection();
+
+            //cambioResize(null, null);
+            splitContainer1.Panel2.Padding = new Padding(0, menuStrip1.Height, 0, 0);
+
         }
 
         private void iniciaAdmod()
@@ -86,7 +85,7 @@ namespace TFG
                 //El nombre de la columna no debe mostrar los carácteres "_"
                 string nombreColumna = columna.HeaderText.Replace("_", " ");
 
-                label.Text = nombreColumna+":";
+                label.Text = nombreColumna + ":";
 
                 label.Width = anchoLabel;
                 label.Height = alturaControl;
@@ -138,7 +137,7 @@ namespace TFG
             panelMod = new Panel();
             panelMod.BackColor = ColorTranslator.FromHtml("#fcc419");
             panelMod.Size = new Size(180, 50);
-            
+
             flowLayoutPanel1.Controls.Add(panelMod);
 
             Label labelMod = new Label();
@@ -175,30 +174,30 @@ namespace TFG
             try
             {
 
-            
-            if (this.WindowState == FormWindowState.Maximized)
-            {/*
-                dtClientes.Columns["direccion"].Visible = true;
-                dtClientes.Columns["municipio"].Visible = true;
-                dtClientes.Columns["provincia"].Visible = true;
-                dtClientes.Columns["codigo_postal"].Visible = true;*/
-                splitContainer1.SplitterDistance = splitterSize["cerrado"];
-            }
-            else
-            {
-                    /*
-                dtClientes.Columns["direccion"].Visible = false;
-                dtClientes.Columns["municipio"].Visible = false;
-                dtClientes.Columns["provincia"].Visible = false;
-                dtClientes.Columns["codigo_postal"].Visible = false;
-                    */
+
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    dtClientes.Columns["direccion"].Visible = true;
+                    dtClientes.Columns["municipio"].Visible = true;
+                    dtClientes.Columns["provincia"].Visible = true;
+                    dtClientes.Columns["codigo_postal"].Visible = true;
+                    splitContainer1.SplitterDistance = splitterSize["cerrado"];
+                }
+                else
+                {
+
+                    dtClientes.Columns["direccion"].Visible = false;
+                    dtClientes.Columns["municipio"].Visible = false;
+                    dtClientes.Columns["provincia"].Visible = false;
+                    dtClientes.Columns["codigo_postal"].Visible = false;
+
                 }
 
             }
             catch (Exception notFound)
             {
 
-               
+
             }
             //compruebo como estaba el filtro, añadir/modificar porque se mueve al cambiar el tamaño
             if (splitContainer2.Panel2Collapsed)
@@ -208,7 +207,7 @@ namespace TFG
             }
             else if (splitContainer2.Panel1Collapsed)
             {
-                
+                splitContainer1.SplitterDistance = 38;
                 while (flowLayoutPanel1.VerticalScroll.Visible)
                 {
                     splitContainer1.SplitterDistance += 10;
@@ -271,6 +270,10 @@ namespace TFG
                     guardar(null, null);
                 }
             }
+
+        }
+        private void darAlta(object sender, EventArgs e)
+        {
 
         }
         private void cambioGrid(object sender, DataGridViewCellEventArgs e)
@@ -341,7 +344,12 @@ namespace TFG
             if (splitContainer2.Panel2Collapsed)
             {
                 splitContainer1.SplitterDistance = splitterSize["cerrado"];
+
                 splitContainer2.Panel2Collapsed = false;
+
+                splitContainer1.Panel1Collapsed = true;
+                splitContainer1.Panel2.Padding = new Padding(0, menuStrip1.Height, 0, 0);
+
                 dtClientes.DataSource = ds;
                 return;
             }
@@ -349,27 +357,43 @@ namespace TFG
             splitContainer1.SplitterDistance = splitterSize["filtro"];
             splitContainer2.Panel2Collapsed = true;
             splitContainer2.Panel1Collapsed = false;
+            splitContainer1.Panel1Collapsed = false;
+            splitContainer1.Panel2.Padding = new Padding(0, 0, 0, 0);
             cambioFiltro(null, null);
         }
 
         private void abreAdmod(object sender, EventArgs e)
         {
-            
+
             if (splitContainer2.Panel1Collapsed)
             {
                 splitContainer1.SplitterDistance = splitterSize["cerrado"];
                 splitContainer2.Panel1Collapsed = false;
+                splitContainer1.Panel1Collapsed = true;
+                splitContainer1.Panel2.Padding = new Padding(0, menuStrip1.Height, 0, 0);
+
+                panelMod.Visible = false;
+                panelAlta.Visible = false;
                 return;
             }
 
             ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
             if (menuItem != null && menuItem.Name == "altaToolStripMenuItem")
             {
+                panelMod.Visible = false;
                 panelAlta.Visible = true;
+
+            }
+            else if (menuItem != null && menuItem.Name == "modToolStripMenuItem")
+            {
+                panelAlta.Visible = false;
+                panelMod.Visible = true;
             }
 
             splitContainer2.Panel1Collapsed = true;
             splitContainer2.Panel2Collapsed = false;
+            splitContainer1.Panel1Collapsed = false;
+            splitContainer1.Panel2.Padding = new Padding(0, 0, 0, 0);
             while (flowLayoutPanel1.VerticalScroll.Visible)
             {
                 splitContainer1.SplitterDistance += 5;
@@ -381,7 +405,7 @@ namespace TFG
         private void cambioFiltro(object sender, DataGridViewCellEventArgs e)
         {
             string query = "SELECT * FROM cliente WHERE ";
-            foreach(DataGridViewColumn col in dtFiltro.Columns)
+            foreach (DataGridViewColumn col in dtFiltro.Columns)
             {
                 query += $"{col.HeaderText} LIKE '%{dtFiltro.Rows[0].Cells[col.Name].Value}%' ";
 
@@ -390,7 +414,7 @@ namespace TFG
                 {
                     query += "AND ";
                 }
-                
+
 
             }
 
@@ -404,10 +428,10 @@ namespace TFG
             dtClientes.Refresh();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void verTodasLasCitasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formCalendario f1 = new formCalendario();
-            f1.Show();
+            FormCalendario f = new FormCalendario();
+            f.ShowDialog();
         }
     }
 

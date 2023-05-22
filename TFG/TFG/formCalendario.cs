@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,16 @@ using System.Windows.Forms;
 
 namespace TFG
 {
-    public partial class formCalendario : Form
+    public partial class FormCalendario : Form
     {
-        public formCalendario()
+        public FormCalendario()
+        {
+            InitializeComponent();
+
+
+            
+        }
+        public FormCalendario(String dniCLiente)
         {
             InitializeComponent();
             

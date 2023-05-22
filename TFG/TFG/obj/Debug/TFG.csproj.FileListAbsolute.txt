@@ -63,3 +63,5 @@ C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.csproj.CopyCompl
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.exe
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.pdb
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.formCalendario.resources
+C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.FormDBlogin.resources
+C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.FormUserLogin.resources
