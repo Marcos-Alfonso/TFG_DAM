@@ -313,8 +313,8 @@ namespace TFG
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txNombre);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCalendario";
-            this.ShowIcon = false;
             this.Text = "Citas";
             ((System.ComponentModel.ISupportInitialize)(this.tbDuracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdMod)).EndInit();

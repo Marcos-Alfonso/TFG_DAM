@@ -39,6 +39,11 @@ namespace TFG
             this.dtFiltro = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dtClientes = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.verClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verArchivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,11 +75,6 @@ namespace TFG
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonExportar = new System.Windows.Forms.ToolStripButton();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.verClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verArchivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -85,10 +85,10 @@ namespace TFG
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtFiltro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtClientes)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -204,6 +204,49 @@ namespace TFG
             this.dtClientes.TabIndex = 0;
             this.dtClientes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cambioGrid);
             this.dtClientes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dtClientes_MouseDown);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verClienteToolStripMenuItem,
+            this.verArchivosToolStripMenuItem,
+            this.eliminarToolStripMenuItem,
+            this.modificarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 108);
+            // 
+            // verClienteToolStripMenuItem
+            // 
+            this.verClienteToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_user_48;
+            this.verClienteToolStripMenuItem.Name = "verClienteToolStripMenuItem";
+            this.verClienteToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.verClienteToolStripMenuItem.Text = "&Ver Cliente";
+            this.verClienteToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // verArchivosToolStripMenuItem
+            // 
+            this.verArchivosToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_log_50;
+            this.verArchivosToolStripMenuItem.Name = "verArchivosToolStripMenuItem";
+            this.verArchivosToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.verArchivosToolStripMenuItem.Text = "&Ver archivos";
+            this.verArchivosToolStripMenuItem.Click += new System.EventHandler(this.toolClienteLog_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_minus_50;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.eliminarToolStripMenuItem.Text = "&Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Image = global::TFG.Properties.Resources.modify;
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.modificarToolStripMenuItem.Text = "&Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.abreModificar);
             // 
             // menuStrip1
             // 
@@ -514,49 +557,6 @@ namespace TFG
             this.toolStripButtonExportar.Text = "Exportar Base de Datos";
             this.toolStripButtonExportar.Click += new System.EventHandler(this.toolStripMenuItemExportDB_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verClienteToolStripMenuItem,
-            this.verArchivosToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
-            this.modificarToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 108);
-            // 
-            // verClienteToolStripMenuItem
-            // 
-            this.verClienteToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_user_48;
-            this.verClienteToolStripMenuItem.Name = "verClienteToolStripMenuItem";
-            this.verClienteToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.verClienteToolStripMenuItem.Text = "&Ver Cliente";
-            this.verClienteToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_minus_50;
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.eliminarToolStripMenuItem.Text = "&Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Image = global::TFG.Properties.Resources.modify;
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.modificarToolStripMenuItem.Text = "&Modificar";
-            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.abreModificar);
-            // 
-            // verArchivosToolStripMenuItem
-            // 
-            this.verArchivosToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_log_50;
-            this.verArchivosToolStripMenuItem.Name = "verArchivosToolStripMenuItem";
-            this.verArchivosToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.verArchivosToolStripMenuItem.Text = "&Ver archivos";
-            this.verArchivosToolStripMenuItem.Click += new System.EventHandler(this.toolClienteLog_Click);
-            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -585,13 +585,13 @@ namespace TFG
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtFiltro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtClientes)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -116,7 +116,7 @@ namespace TFG
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TFG.Properties.Resources.nombreCompleto;
+            this.pictureBox1.Image = global::TFG.Properties.Resources.nombreIniciales;
             this.pictureBox1.InitialImage = global::TFG.Properties.Resources.nombreCompleto;
             this.pictureBox1.Location = new System.Drawing.Point(170, 12);
             this.pictureBox1.Name = "pictureBox1";
