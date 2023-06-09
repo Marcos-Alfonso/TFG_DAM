@@ -50,6 +50,7 @@ namespace TFG
             this.pdMod = new System.Windows.Forms.PictureBox();
             this.pbDelete = new System.Windows.Forms.PictureBox();
             this.pbAdd = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbDuracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdMod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
@@ -60,10 +61,10 @@ namespace TFG
             // 
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Location = new System.Drawing.Point(12, 47);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(439, 480);
+            this.listView1.Size = new System.Drawing.Size(439, 445);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.otroSeleccionado);
@@ -287,12 +288,24 @@ namespace TFG
             this.pbAdd.TabStop = false;
             this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 12);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(91, 21);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.Text = "Ver todas";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // FormCalendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1713, 504);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.calendar1);
             this.Controls.Add(this.btAceptar);
             this.Controls.Add(this.pdMod);
@@ -347,5 +360,6 @@ namespace TFG
         private System.Windows.Forms.PictureBox pdMod;
         private System.Windows.Forms.Button btAceptar;
         private Calendar.NET.Calendar calendar1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

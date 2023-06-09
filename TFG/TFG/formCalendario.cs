@@ -180,7 +180,7 @@ namespace TFG
                             item.Font = new Font(listView1.Font, FontStyle.Bold);
                             item.ForeColor = Settings1.Default.myColor;
                         }
-                        listView1.Items.Add(item);
+
 
 
                         //añade a calendario
@@ -199,6 +199,13 @@ namespace TFG
 
                         calendar1.AddEvent(e);
                         listaEventos.Add(e);
+
+                        if (!checkBox1.Checked && fechaYHora < DateTime.Now)
+                        {
+                            continue;
+                        }
+
+                        listView1.Items.Add(item);
                     }
                 }
             }
@@ -566,6 +573,11 @@ namespace TFG
                 return true;
             }
             return false;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            loadItemsList();
         }
     }
 

@@ -333,6 +333,7 @@
     <None Include="Resources\icons8-carpeta-48.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\nombreIniciales.png" />
     <None Include="Resources\nombreCompleto.png" />
     <None Include="Resources\icons8-importar-30.png" />
     <None Include="Resources\reload.png" />
