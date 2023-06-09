@@ -45,9 +45,7 @@ namespace TFG
 
                 using (MySqlDataReader result = command.ExecuteReader())
                 {
-
-                    if (result != null)
-                        result.Read();
+                    if (result.Read())
                     {
                         Program.userId = result.GetString("id");
                     }

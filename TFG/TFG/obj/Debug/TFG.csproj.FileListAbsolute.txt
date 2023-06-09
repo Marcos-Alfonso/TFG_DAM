@@ -30,9 +30,6 @@ E:\RepGestora\TFG\TFG\bin\Debug\System.Memory.xml
 E:\RepGestora\TFG\TFG\bin\Debug\System.Numerics.Vectors.xml
 E:\RepGestora\TFG\TFG\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\RepGestora\TFG\TFG\obj\Debug\TFG.csproj.CopyComplete
-C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\TFG.exe.config
-C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\TFG.exe
-C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\TFG.pdb
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\Google.Protobuf.dll
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\K4os.Compression.LZ4.dll
@@ -59,8 +56,6 @@ C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.Properties.Resou
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.csproj.GenerateResource.cache
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.csproj.CopyComplete
-C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.exe
-C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.pdb
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.formCalendario.resources
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.FormDBlogin.resources
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.FormUserLogin.resources
@@ -102,7 +97,6 @@ C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\System.Text.Encoding
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\System.Text.Json.xml
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\System.ValueTuple.xml
-C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.exe.licenses
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.Form2.resources
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\Calendar.NET.dll
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.FormClienteLog.resources
@@ -123,3 +117,9 @@ C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\Microsoft.IO.Recycla
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.FormClientes.resources
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.FormVistaCliente.resources
 C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\TFG.FormFiltro.resources
+C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\GestionA.exe.config
+C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\GestionA.exe
+C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\bin\Debug\GestionA.pdb
+C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\GestionA.exe.licenses
+C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\GestionA.exe
+C:\Users\Usuario\Documents\GitHub\TFG_DAM\TFG\TFG\obj\Debug\GestionA.pdb

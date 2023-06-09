@@ -7,11 +7,12 @@
     <ProjectGuid>{FF787B23-8053-4755-A960-A16E74CD61EC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TFG</RootNamespace>
-    <AssemblyName>TFG</AssemblyName>
+    <AssemblyName>GestionA</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -46,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nombreIniciales.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
@@ -354,6 +357,7 @@
     <None Include="Resources\icons8-user-48.png" />
     <None Include="Resources\icons8-flecha-izquierda-larga-50.png" />
     <None Include="Resources\icons8-visible-24.png" />
+    <Content Include="nombreIniciales.ico" />
     <Content Include="Resources\modify.png" />
   </ItemGroup>
   <ItemGroup>

@@ -466,7 +466,7 @@ namespace TFG
             this.toolStripButtonFiltro.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonFiltro.Name = "toolStripButtonFiltro";
             this.toolStripButtonFiltro.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonFiltro.Text = "Guardar";
+            this.toolStripButtonFiltro.Text = "Filtrar";
             this.toolStripButtonFiltro.Click += new System.EventHandler(this.abreVentanaFiltro);
             // 
             // toolStripSeparator1
@@ -507,7 +507,7 @@ namespace TFG
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Text = "Ver cliente";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButtonLog

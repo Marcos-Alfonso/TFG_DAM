@@ -347,12 +347,13 @@ namespace TFG
                 using (MySqlCommand command = new MySqlCommand("SELECT id from cliente where dni = @dni", Program.conn))
                 {
                     command.Parameters.AddWithValue("@dni", dni);
-
-                    MySqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        this.id = reader.GetInt32("id");
+                        if (reader.Read())
+                        {
+                            this.id = reader.GetInt32("id");
 
+                        }
                     }
                 }
             }

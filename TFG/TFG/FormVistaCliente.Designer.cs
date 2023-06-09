@@ -245,7 +245,7 @@ namespace TFG
             this.tsbCitas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCitas.Name = "tsbCitas";
             this.tsbCitas.Size = new System.Drawing.Size(34, 34);
-            this.tsbCitas.Text = "toolStripButton1";
+            this.tsbCitas.Text = "Ver citas";
             this.tsbCitas.Click += new System.EventHandler(this.tsbCitas_Click);
             // 
             // tbEmail
