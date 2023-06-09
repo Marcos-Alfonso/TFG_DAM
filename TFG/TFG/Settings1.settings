@@ -21,7 +21,13 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="myColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="gridFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Microsoft Sans Serif, 10pt</Value>
+    </Setting>
+    <Setting Name="hideColumns" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

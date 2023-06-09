@@ -43,14 +43,18 @@ namespace TFG
                 command.Parameters.AddWithValue("@usuario", tbUser.Text);
                 command.Parameters.AddWithValue("@pass", tbPass.Text);
 
-                object result = command.ExecuteScalar();
-                if (result != null && result != DBNull.Value)
+                using (MySqlDataReader result = command.ExecuteReader())
                 {
-                    Program.userId = Convert.ToInt32(result);
+
+                    if (result != null)
+                        result.Read();
+                    {
+                        Program.userId = result.GetString("id");
+                    }
                 }
             }
 
-            if (Program.userId > 0)
+            if (Program.userId != "")
             {
                 // El usuario y la contraseña son válidos, se encontró una coincidencia en la tabla.
                 if (cbSave.Checked)

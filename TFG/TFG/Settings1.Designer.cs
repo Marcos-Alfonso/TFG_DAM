@@ -97,12 +97,37 @@ namespace TFG {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
         public global::System.Drawing.Color myColor {
             get {
                 return ((global::System.Drawing.Color)(this["myColor"]));
             }
             set {
                 this["myColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 10pt")]
+        public global::System.Drawing.Font gridFont {
+            get {
+                return ((global::System.Drawing.Font)(this["gridFont"]));
+            }
+            set {
+                this["gridFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool hideColumns {
+            get {
+                return ((bool)(this["hideColumns"]));
+            }
+            set {
+                this["hideColumns"] = value;
             }
         }
     }

@@ -196,7 +196,7 @@ namespace TFG
             this.Name = "FormDBlogin";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BD Login";
+            this.Text = "BD Inicio";
             this.Load += new System.EventHandler(this.FormDBlogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

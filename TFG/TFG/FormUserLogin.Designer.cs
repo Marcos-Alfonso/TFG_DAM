@@ -36,14 +36,16 @@ namespace TFG
             this.label2 = new System.Windows.Forms.Label();
             this.cbSave = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btPass = new System.Windows.Forms.Button();
             this.lbError = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btPass = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbPass
             // 
             this.tbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPass.Location = new System.Drawing.Point(93, 205);
+            this.tbPass.Location = new System.Drawing.Point(100, 241);
             this.tbPass.Name = "tbPass";
             this.tbPass.PasswordChar = '*';
             this.tbPass.Size = new System.Drawing.Size(300, 28);
@@ -53,7 +55,7 @@ namespace TFG
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(89, 178);
+            this.label3.Location = new System.Drawing.Point(96, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 24);
             this.label3.TabIndex = 8;
@@ -63,7 +65,7 @@ namespace TFG
             // 
             this.tbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbUser.Location = new System.Drawing.Point(93, 147);
+            this.tbUser.Location = new System.Drawing.Point(100, 183);
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(300, 28);
             this.tbUser.TabIndex = 7;
@@ -72,7 +74,7 @@ namespace TFG
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(89, 120);
+            this.label2.Location = new System.Drawing.Point(96, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 24);
             this.label2.TabIndex = 6;
@@ -82,7 +84,7 @@ namespace TFG
             // 
             this.cbSave.AutoSize = true;
             this.cbSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSave.Location = new System.Drawing.Point(217, 257);
+            this.cbSave.Location = new System.Drawing.Point(217, 290);
             this.cbSave.Name = "cbSave";
             this.cbSave.Size = new System.Drawing.Size(165, 24);
             this.cbSave.TabIndex = 11;
@@ -93,7 +95,7 @@ namespace TFG
             // 
             this.button1.AutoSize = true;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(100, 253);
+            this.button1.Location = new System.Drawing.Point(100, 286);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 30);
             this.button1.TabIndex = 10;
@@ -101,11 +103,33 @@ namespace TFG
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lbError
+            // 
+            this.lbError.AutoSize = true;
+            this.lbError.ForeColor = System.Drawing.Color.Red;
+            this.lbError.Location = new System.Drawing.Point(97, 327);
+            this.lbError.Name = "lbError";
+            this.lbError.Size = new System.Drawing.Size(217, 17);
+            this.lbError.TabIndex = 13;
+            this.lbError.Text = "Usuario y contraseña incorrectos";
+            this.lbError.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TFG.Properties.Resources.nombreCompleto;
+            this.pictureBox1.InitialImage = global::TFG.Properties.Resources.nombreCompleto;
+            this.pictureBox1.Location = new System.Drawing.Point(170, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(142, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // btPass
             // 
             this.btPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPass.Image = ((System.Drawing.Image)(resources.GetObject("btPass.Image")));
-            this.btPass.Location = new System.Drawing.Point(415, 205);
+            this.btPass.Location = new System.Drawing.Point(415, 241);
             this.btPass.Name = "btPass";
             this.btPass.Size = new System.Drawing.Size(52, 34);
             this.btPass.TabIndex = 12;
@@ -114,22 +138,12 @@ namespace TFG
             this.btPass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btPass_MouseDown);
             this.btPass.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btPass_MouseUp);
             // 
-            // lbError
-            // 
-            this.lbError.AutoSize = true;
-            this.lbError.ForeColor = System.Drawing.Color.Red;
-            this.lbError.Location = new System.Drawing.Point(93, 300);
-            this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(217, 17);
-            this.lbError.TabIndex = 13;
-            this.lbError.Text = "Usuario y contraseña incorrectos";
-            this.lbError.Visible = false;
-            // 
             // FormUserLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 353);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.btPass);
             this.Controls.Add(this.cbSave);
@@ -138,10 +152,12 @@ namespace TFG
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbUser);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUserLogin";
-            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Usuario";
             this.Load += new System.EventHandler(this.FormUserLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +173,6 @@ namespace TFG
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btPass;
         private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

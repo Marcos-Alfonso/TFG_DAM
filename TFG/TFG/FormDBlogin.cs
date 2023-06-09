@@ -32,10 +32,13 @@ namespace TFG
 
         private void button1_Click(object sender, EventArgs e)
         {
+            String query = $"server={tbServer.Text};uid={tbUser.Text};pwd={tbPass.Text};database={tbTabla.Text}";
+            //query = "server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso;";
 
             try
             {
-                Program.conn = new MySqlConnection($"server={tbServer.Text};uid={tbUser.Text};pwd={tbPass.Text};database={tbTabla.Text}");
+                Program.conn = new MySqlConnection(query);
+               // Program.conn  = new MySqlConnection("server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso");
                 Program.conn.Open();
 
                 if (Program.conn.State == ConnectionState.Open)
@@ -49,7 +52,8 @@ namespace TFG
                         Settings1.Default.Save();
                     }
                     this.Close();
-                }
+            }
+
 
             }
             catch (MySqlException ex)
@@ -60,8 +64,8 @@ namespace TFG
                 switch (ex.Number)
                 {
                     case 1042:
-                        //MessageBox.Show($"No se puede conectar al servidor.\nError completo: \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        lbError.Text = "No se puede conectar al servidor.";
+                        MessageBox.Show($"No se puede conectar al servidor.\nError completo: \n{ex.Message}\n{query}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lbError.Text = "No se puede conectar al servidor."+ex.Message;
                         tbServer.ForeColor = Color.Red;
                         lbError.Visible = true;
                         break;
