@@ -590,6 +590,11 @@ namespace TFG
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            if (dtClientes.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
             if (unsavedChanges)
             {
                 // Se han realizado cambios no guardados
@@ -604,6 +609,7 @@ namespace TFG
                     return;
                 }
             }
+
             FormVistaCliente f = new FormVistaCliente(Convert.ToInt32(dtClientes.SelectedRows[0].Cells["id"].Value), false);
             f.ShowDialog();
 
@@ -668,7 +674,14 @@ namespace TFG
             {
                 var hti = dtClientes.HitTest(e.X, e.Y);
                 dtClientes.ClearSelection();
+
+                if (hti.RowIndex ==-1)
+                {
+                    return;
+                }
                 dtClientes.Rows[hti.RowIndex].Selected = true;
+
+                contextMenuStrip1.Show(Cursor.Position);
             }
         }
 

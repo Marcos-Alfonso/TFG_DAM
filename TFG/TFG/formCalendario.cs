@@ -14,7 +14,7 @@ namespace TFG
 {
     public partial class FormCalendario : Form
     {
-        String query = "SELECT c.id, c.idUsuario, cl.dni, c.fecha, c.hora, c.duracion, c.descripcion, cl.nombre AS nombreCliente FROM cita c JOIN cliente cl ON c.idCliente = cl.id order by c.fecha";
+        String query = "SELECT c.id, c.idUsuario, cl.dni, c.fecha, c.hora, c.duracion, c.descripcion, cl.nombre AS nombreCliente FROM cita c JOIN cliente cl ON c.idCliente = cl.id order by c.fecha DESC";
         public FormCalendario()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace TFG
         public FormCalendario(int id)
         {
             InitializeComponent();
-             query = "SELECT c.id, c.idUsuario, cl.dni, c.fecha, c.hora, c.duracion, c.descripcion, cl.nombre AS nombreCliente FROM cita c JOIN cliente cl ON c.idCliente = cl.id where cl.id = "+id+" order by c.fecha";
+             query = "SELECT c.id, c.idUsuario, cl.dni, c.fecha, c.hora, c.duracion, c.descripcion, cl.nombre AS nombreCliente FROM cita c JOIN cliente cl ON c.idCliente = cl.id where cl.id = "+id+ " order by c.fecha  DESC";
             this.id = id;
             initializeList();
             initializeHelp();
@@ -112,11 +112,6 @@ namespace TFG
             loadItemsList();
 
             listView1.ColumnWidthChanging += ListView1_ColumnWidthChanging;
-
-            listView1.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listView1.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listView1.Columns[4].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listView1.Columns[6].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
 
 
         }
@@ -217,7 +212,10 @@ namespace TFG
                 listView1.Items[0].Focused = true;
                 listView1.Select();
             }
-
+            listView1.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listView1.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listView1.Columns[4].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listView1.Columns[6].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
         private void ListView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
@@ -308,7 +306,14 @@ namespace TFG
             tbDni.Text = "";
             cbUsuario.SelectedValue = Program.userId;
             dtFecha.Value = DateTime.Now;
-            dtHora.Value = DateTime.Now;
+
+            //añadimos la hora pero la redondeamos a la alta a intervalos de 15 min
+            int minutos = DateTime.Now.Minute;
+            int residuo = minutos % 15;
+            int minutosAgregar = residuo == 0 ? 0 : 15 - residuo;
+            DateTime fechaRedondeada = DateTime.Now.AddMinutes(minutosAgregar);
+            dtHora.Value = fechaRedondeada;
+
             tbDuracion.Value = 30;
             rtDescripcion.Text = "";
 
