@@ -61,10 +61,10 @@ namespace TFG
             // 
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 47);
+            this.listView1.Location = new System.Drawing.Point(9, 472);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(439, 445);
+            this.listView1.Size = new System.Drawing.Size(502, 474);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.otroSeleccionado);
@@ -74,7 +74,7 @@ namespace TFG
             this.txNombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txNombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txNombre.Location = new System.Drawing.Point(457, 82);
+            this.txNombre.Location = new System.Drawing.Point(9, 82);
             this.txNombre.Name = "txNombre";
             this.txNombre.Size = new System.Drawing.Size(262, 27);
             this.txNombre.TabIndex = 1;
@@ -84,7 +84,7 @@ namespace TFG
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 59);
+            this.label1.Location = new System.Drawing.Point(10, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 2;
@@ -94,7 +94,7 @@ namespace TFG
             // 
             this.lbDni.AutoSize = true;
             this.lbDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDni.Location = new System.Drawing.Point(721, 59);
+            this.lbDni.Location = new System.Drawing.Point(273, 59);
             this.lbDni.Name = "lbDni";
             this.lbDni.Size = new System.Drawing.Size(38, 20);
             this.lbDni.TabIndex = 3;
@@ -104,7 +104,7 @@ namespace TFG
             // 
             this.tbDni.Enabled = false;
             this.tbDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDni.Location = new System.Drawing.Point(725, 80);
+            this.tbDni.Location = new System.Drawing.Point(277, 80);
             this.tbDni.Name = "tbDni";
             this.tbDni.Size = new System.Drawing.Size(118, 27);
             this.tbDni.TabIndex = 4;
@@ -115,7 +115,7 @@ namespace TFG
             this.cbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUsuario.FormattingEnabled = true;
-            this.cbUsuario.Location = new System.Drawing.Point(460, 132);
+            this.cbUsuario.Location = new System.Drawing.Point(12, 132);
             this.cbUsuario.Name = "cbUsuario";
             this.cbUsuario.Size = new System.Drawing.Size(146, 28);
             this.cbUsuario.TabIndex = 5;
@@ -124,7 +124,7 @@ namespace TFG
             // 
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.Location = new System.Drawing.Point(457, 112);
+            this.lbUsuario.Location = new System.Drawing.Point(9, 112);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(67, 20);
             this.lbUsuario.TabIndex = 6;
@@ -134,7 +134,7 @@ namespace TFG
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(458, 163);
+            this.label2.Location = new System.Drawing.Point(10, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 8;
@@ -145,7 +145,7 @@ namespace TFG
             this.dtFecha.CustomFormat = "dd/MM/yyyy  hh:mm";
             this.dtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha.Location = new System.Drawing.Point(460, 186);
+            this.dtFecha.Location = new System.Drawing.Point(12, 186);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(146, 27);
             this.dtFecha.TabIndex = 9;
@@ -155,7 +155,7 @@ namespace TFG
             this.dtHora.CustomFormat = "HH:mm";
             this.dtHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtHora.Location = new System.Drawing.Point(612, 186);
+            this.dtHora.Location = new System.Drawing.Point(164, 186);
             this.dtHora.Name = "dtHora";
             this.dtHora.ShowUpDown = true;
             this.dtHora.Size = new System.Drawing.Size(107, 27);
@@ -166,7 +166,7 @@ namespace TFG
             // 
             this.lbHora.AutoSize = true;
             this.lbHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHora.Location = new System.Drawing.Point(610, 163);
+            this.lbHora.Location = new System.Drawing.Point(162, 163);
             this.lbHora.Name = "lbHora";
             this.lbHora.Size = new System.Drawing.Size(46, 20);
             this.lbHora.TabIndex = 10;
@@ -176,7 +176,7 @@ namespace TFG
             // 
             this.lbDurecion.AutoSize = true;
             this.lbDurecion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDurecion.Location = new System.Drawing.Point(721, 163);
+            this.lbDurecion.Location = new System.Drawing.Point(273, 163);
             this.lbDurecion.Name = "lbDurecion";
             this.lbDurecion.Size = new System.Drawing.Size(77, 20);
             this.lbDurecion.TabIndex = 13;
@@ -186,7 +186,7 @@ namespace TFG
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(812, 191);
+            this.label3.Location = new System.Drawing.Point(364, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 20);
             this.label3.TabIndex = 14;
@@ -195,9 +195,9 @@ namespace TFG
             // rtDescripcion
             // 
             this.rtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtDescripcion.Location = new System.Drawing.Point(460, 219);
+            this.rtDescripcion.Location = new System.Drawing.Point(12, 219);
             this.rtDescripcion.Name = "rtDescripcion";
-            this.rtDescripcion.Size = new System.Drawing.Size(502, 273);
+            this.rtDescripcion.Size = new System.Drawing.Size(502, 223);
             this.rtDescripcion.TabIndex = 15;
             this.rtDescripcion.Text = "";
             // 
@@ -209,7 +209,7 @@ namespace TFG
             0,
             0,
             0});
-            this.tbDuracion.Location = new System.Drawing.Point(725, 186);
+            this.tbDuracion.Location = new System.Drawing.Point(277, 186);
             this.tbDuracion.Maximum = new decimal(new int[] {
             600,
             0,
@@ -222,7 +222,7 @@ namespace TFG
             // btAceptar
             // 
             this.btAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAceptar.Location = new System.Drawing.Point(866, 175);
+            this.btAceptar.Location = new System.Drawing.Point(418, 175);
             this.btAceptar.Name = "btAceptar";
             this.btAceptar.Size = new System.Drawing.Size(96, 36);
             this.btAceptar.TabIndex = 20;
@@ -234,6 +234,7 @@ namespace TFG
             // calendar1
             // 
             this.calendar1.AllowEditingEvents = false;
+            this.calendar1.AutoScroll = true;
             this.calendar1.CalendarDate = new System.DateTime(2023, 6, 7, 0, 0, 0, 0);
             this.calendar1.CalendarView = Calendar.NET.CalendarViews.Month;
             this.calendar1.DateHeaderFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
@@ -241,9 +242,10 @@ namespace TFG
             this.calendar1.DaysFont = new System.Drawing.Font("Arial", 10F);
             this.calendar1.DayViewTimeFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.calendar1.DimDisabledEvents = true;
+            this.calendar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.calendar1.HighlightCurrentDay = true;
             this.calendar1.LoadPresetHolidays = true;
-            this.calendar1.Location = new System.Drawing.Point(968, 12);
+            this.calendar1.Location = new System.Drawing.Point(532, 0);
             this.calendar1.Name = "calendar1";
             this.calendar1.ShowArrowControls = true;
             this.calendar1.ShowDashedBorderOnDisabledEvents = true;
@@ -251,14 +253,14 @@ namespace TFG
             this.calendar1.ShowDisabledEvents = false;
             this.calendar1.ShowEventTooltips = true;
             this.calendar1.ShowTodayButton = false;
-            this.calendar1.Size = new System.Drawing.Size(733, 480);
+            this.calendar1.Size = new System.Drawing.Size(1181, 959);
             this.calendar1.TabIndex = 21;
             this.calendar1.TodayFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             // 
             // pdMod
             // 
             this.pdMod.Image = global::TFG.Properties.Resources.modify;
-            this.pdMod.Location = new System.Drawing.Point(538, 12);
+            this.pdMod.Location = new System.Drawing.Point(90, 12);
             this.pdMod.Name = "pdMod";
             this.pdMod.Size = new System.Drawing.Size(32, 32);
             this.pdMod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -269,7 +271,7 @@ namespace TFG
             // pbDelete
             // 
             this.pbDelete.Image = ((System.Drawing.Image)(resources.GetObject("pbDelete.Image")));
-            this.pbDelete.Location = new System.Drawing.Point(500, 12);
+            this.pbDelete.Location = new System.Drawing.Point(52, 12);
             this.pbDelete.Name = "pbDelete";
             this.pbDelete.Size = new System.Drawing.Size(32, 32);
             this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -280,7 +282,7 @@ namespace TFG
             // pbAdd
             // 
             this.pbAdd.Image = ((System.Drawing.Image)(resources.GetObject("pbAdd.Image")));
-            this.pbAdd.Location = new System.Drawing.Point(462, 12);
+            this.pbAdd.Location = new System.Drawing.Point(14, 12);
             this.pbAdd.Name = "pbAdd";
             this.pbAdd.Size = new System.Drawing.Size(32, 32);
             this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -291,7 +293,7 @@ namespace TFG
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 12);
+            this.checkBox1.Location = new System.Drawing.Point(9, 448);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(91, 21);
             this.checkBox1.TabIndex = 22;
@@ -303,8 +305,9 @@ namespace TFG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1713, 504);
+            this.ClientSize = new System.Drawing.Size(1713, 959);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.calendar1);
             this.Controls.Add(this.btAceptar);

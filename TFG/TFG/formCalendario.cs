@@ -21,6 +21,7 @@ namespace TFG
             initializeList();
             initializeHelp();
             initializeComboUser();
+            this.WindowState = FormWindowState.Maximized;
 
         }
         int id = 0;
@@ -32,6 +33,7 @@ namespace TFG
             initializeList();
             initializeHelp();
             initializeComboUser();
+            this.WindowState = FormWindowState.Maximized;
         }
 
 
