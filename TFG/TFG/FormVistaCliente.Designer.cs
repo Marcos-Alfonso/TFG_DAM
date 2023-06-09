@@ -220,7 +220,7 @@ namespace TFG
             this.tsbMod.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbMod.Name = "tsbMod";
             this.tsbMod.Size = new System.Drawing.Size(34, 34);
-            this.tsbMod.Text = "toolStripButton1";
+            this.tsbMod.Text = "Editar";
             this.tsbMod.Click += new System.EventHandler(this.tsbMod_Click);
             // 
             // toolStripSeparator1

@@ -100,11 +100,12 @@ namespace TFG
 
                         string nombre = reader.GetString("Nombre");
                         string dni = reader.GetString("DNI");
-                        string direccion = reader.GetString("Direccion");
-                        string CD = reader.GetString("Codigo_postal");
+                        string direccion = reader.IsDBNull(reader.GetOrdinal("Direccion")) ? string.Empty : reader.GetString("Direccion");
+                        string CD = reader.IsDBNull(reader.GetOrdinal("Codigo_postal")) ? string.Empty : reader.GetString("Codigo_postal");
                         string telf1 = reader.IsDBNull(reader.GetOrdinal("Telefono1")) ? string.Empty : reader.GetString("Telefono1");
                         string telf2 = reader.IsDBNull(reader.GetOrdinal("Telefono2")) ? string.Empty : reader.GetString("Telefono2");
-                        String email = reader.GetString("email");
+                        String email = reader.IsDBNull(reader.GetOrdinal("email")) ? string.Empty : reader.GetString("email");
+
 
                         tbNombre.Text = nombre;
                         tbDni.Text = dni;
