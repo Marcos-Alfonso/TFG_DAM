@@ -104,7 +104,7 @@ namespace TFG
                         string CD = reader.IsDBNull(reader.GetOrdinal("Codigo_postal")) ? string.Empty : reader.GetString("Codigo_postal");
                         string telf1 = reader.IsDBNull(reader.GetOrdinal("Telefono1")) ? string.Empty : reader.GetString("Telefono1");
                         string telf2 = reader.IsDBNull(reader.GetOrdinal("Telefono2")) ? string.Empty : reader.GetString("Telefono2");
-                        String email = reader.IsDBNull(reader.GetOrdinal("email")) ? string.Empty : reader.GetString("email");
+                        string email = reader.IsDBNull(reader.GetOrdinal("email")) ? string.Empty : reader.GetString("email");
 
 
                         tbNombre.Text = nombre;
@@ -123,9 +123,17 @@ namespace TFG
             string rutaFichero = Path.Combine(carpetaCliente, "log.rtf");
             if (Directory.Exists(carpetaCliente) && File.Exists(rutaFichero))
             {
-                richTextBox1.LoadFile(rutaFichero);
-                richTextBox1.Select(richTextBox1.Text.Length - 1, 0);
-                richTextBox1.ScrollToCaret();
+                try
+                {
+                    richTextBox1.LoadFile(rutaFichero);
+                    richTextBox1.Select(richTextBox1.Text.Length - 1, 0);
+                    richTextBox1.ScrollToCaret();
+                }
+                catch (Exception)
+                {
+
+                }
+
             }
         }
 

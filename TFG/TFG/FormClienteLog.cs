@@ -770,6 +770,10 @@ namespace TFG
                     if (charFont != null)
                     {
                         float fontSize = charFont.Size;
+                        if (fontSize == 1)
+                        {
+                            continue;
+                        }
                         richTextBox1.SelectionFont = new Font(charFont.FontFamily, fontSize - 1, charFont.Style);
                     }
                 }
@@ -945,6 +949,7 @@ namespace TFG
         {
             float zoomPercent = Convert.ToSingle(e.ClickedItem.Text.Trim('%'));
             richTextBox1.ZoomFactor = zoomPercent / 100;
+            zoomDropDownButton.Text = "Zoom "+zoomPercent+"%";
         }
 
 
@@ -952,6 +957,8 @@ namespace TFG
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+
                 // Crear la carpeta si no existe
                 Directory.CreateDirectory(carpetaGeneral);
                 Directory.CreateDirectory(carpetaCliente);
@@ -960,10 +967,26 @@ namespace TFG
                 richTextBox1.SaveFile(rutaFichero, RichTextBoxStreamType.RichText);
                 loadFiles();
 
+                statusStrip1.Visible = true;
+
+                Timer timer = new Timer();
+                timer.Interval = 3000; 
+                timer.Tick += (sender2, e2) =>
+                {
+                    statusStrip1.Visible = false;
+                    timer.Stop();
+                    timer.Dispose();
+                };
+                timer.Start();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error al guardar el archivo: {ex.Message}");
+            }
+            finally
+            {
+                // Restaurar el cursor predeterminado
+                this.Cursor = Cursors.Default;
             }
         }
 

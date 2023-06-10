@@ -110,7 +110,15 @@ namespace TFG
             {
                 if (control is TextBox tb)
                 {
-                    where += $"{tb.Name} LIKE '%{tb.Text}%' ";
+                    if (tb.Text == "")
+                    {
+                        where += $" ({tb.Name} LIKE '%{tb.Text}%' OR {tb.Name} IS NULL ) ";
+                    }
+                    else
+                    {
+                        where += $" ({tb.Name} LIKE '%{tb.Text}%') ";
+                    }
+                    
 
                     count++;
 
