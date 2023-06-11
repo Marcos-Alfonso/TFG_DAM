@@ -168,7 +168,7 @@ namespace TFG
             // 
             this.lbError.AutoSize = true;
             this.lbError.ForeColor = System.Drawing.Color.Red;
-            this.lbError.Location = new System.Drawing.Point(97, 327);
+            this.lbError.Location = new System.Drawing.Point(54, 327);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(217, 17);
             this.lbError.TabIndex = 14;

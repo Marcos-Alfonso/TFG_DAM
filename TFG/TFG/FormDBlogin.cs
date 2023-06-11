@@ -42,27 +42,26 @@ namespace TFG
                 // Program.conn  = new MySqlConnection("server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso");
                 Program.conn.Open();
 
-                bool tablasExistentes = false;
+                bool tablasExistentes = true;
 
                 using (MySqlCommand command = Program.conn.CreateCommand())
                 {
+                    List<string> tablas = new List<string>
+                        {
+                            "cliente",
+                            "usuario",
+                            "cita",
+                            "MUNICIPIOS",
+                            "PROVINCIAS"
+                        };
 
-                    command.CommandText = "SHOW TABLES LIKE 'cliente'";
-                    object result = command.ExecuteScalar();
-                    bool tablaClienteExiste = (result != null);
-
-                    command.CommandText = "SHOW TABLES LIKE 'usuario'";
-                    result = command.ExecuteScalar();
-                    bool tablaUsuarioExiste = (result != null);
-
-                    command.CommandText = "SHOW TABLES LIKE 'cita'";
-                    result = command.ExecuteScalar();
-                    bool tablaCitaExiste = (result != null);
-
-                    if (tablaClienteExiste && tablaUsuarioExiste && tablaCitaExiste)
+                    foreach (string s in tablas)
                     {
-                        tablasExistentes = true;
+                        command.CommandText = $"SHOW TABLES LIKE '{s}'";
+                        object result = command.ExecuteScalar();
+                        tablasExistentes = tablasExistentes & (result != null);
                     }
+
                 }
 
                 if (!tablasExistentes)
