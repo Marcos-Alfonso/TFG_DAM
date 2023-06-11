@@ -17,7 +17,7 @@ namespace TFG
         public FormDBlogin()
         {
             InitializeComponent();
- 
+
             Settings1.Default.Reload();
             tbUser.Text = Settings1.Default.dbUser;
             tbServer.Text = Settings1.Default.dbServer;
@@ -32,14 +32,45 @@ namespace TFG
 
         private void button1_Click(object sender, EventArgs e)
         {
+            limpiaCampos();
             String query = $"server={tbServer.Text};uid={tbUser.Text};pwd={tbPass.Text};database={tbTabla.Text}";
             //query = "server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso;";
 
             try
             {
                 Program.conn = new MySqlConnection(query);
-               // Program.conn  = new MySqlConnection("server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso");
+                // Program.conn  = new MySqlConnection("server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso");
                 Program.conn.Open();
+
+                bool tablasExistentes = false;
+
+                using (MySqlCommand command = Program.conn.CreateCommand())
+                {
+
+                    command.CommandText = "SHOW TABLES LIKE 'cliente'";
+                    object result = command.ExecuteScalar();
+                    bool tablaClienteExiste = (result != null);
+
+                    command.CommandText = "SHOW TABLES LIKE 'usuario'";
+                    result = command.ExecuteScalar();
+                    bool tablaUsuarioExiste = (result != null);
+
+                    command.CommandText = "SHOW TABLES LIKE 'cita'";
+                    result = command.ExecuteScalar();
+                    bool tablaCitaExiste = (result != null);
+
+                    if (tablaClienteExiste && tablaUsuarioExiste && tablaCitaExiste)
+                    {
+                        tablasExistentes = true;
+                    }
+                }
+
+                if (!tablasExistentes)
+                {
+                    Program.conn.Close();
+                    lbError.Text = "Conexión establecida, pero no se encuentran tablas necesarias.";
+                    lbError.Visible = true;
+                }
 
                 if (Program.conn.State == ConnectionState.Open)
                 {
@@ -52,7 +83,7 @@ namespace TFG
                         Settings1.Default.Save();
                     }
                     this.Close();
-            }
+                }
 
 
             }
@@ -60,12 +91,12 @@ namespace TFG
             {
                 // Capturar el error y mostrar un mensaje adecuado
                 //MessageBox.Show($"Error al abrir la conexión, compruebe que las credenciales son correctas.\nError: \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                limpiaCampos();
+
                 switch (ex.Number)
                 {
                     case 1042:
-                        MessageBox.Show($"No se puede conectar al servidor.\nError completo: \n{ex.Message}\n{query}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        lbError.Text = "No se puede conectar al servidor."+ex.Message;
+                        //MessageBox.Show($"No se puede conectar al servidor.\nError completo: \n{ex.Message}\n{query}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lbError.Text = "No se puede conectar al servidor.";
                         tbServer.ForeColor = Color.Red;
                         lbError.Visible = true;
                         break;
@@ -103,12 +134,12 @@ namespace TFG
         }
         private void btPass_MouseDown(object sender, MouseEventArgs e)
         {
-            tbPass.PasswordChar = '\0'; // Mostrar la contraseña como texto normal
+            tbPass.PasswordChar = '\0';
         }
 
         private void btPass_MouseUp(object sender, MouseEventArgs e)
         {
-            tbPass.PasswordChar = '*'; // Ocultar la contraseña con asteriscos
+            tbPass.PasswordChar = '*';
         }
     }
 }

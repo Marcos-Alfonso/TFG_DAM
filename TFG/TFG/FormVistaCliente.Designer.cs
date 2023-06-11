@@ -231,7 +231,7 @@ namespace TFG
             // toolStripButtonArchivos
             // 
             this.toolStripButtonArchivos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonArchivos.Image = global::TFG.Properties.Resources.folder;
+            this.toolStripButtonArchivos.Image = global::TFG.Properties.Resources.icons8_folder_50;
             this.toolStripButtonArchivos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonArchivos.Name = "toolStripButtonArchivos";
             this.toolStripButtonArchivos.Size = new System.Drawing.Size(34, 34);

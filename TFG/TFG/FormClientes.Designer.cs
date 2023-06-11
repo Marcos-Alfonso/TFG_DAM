@@ -513,7 +513,7 @@ namespace TFG
             // toolStripButtonLog
             // 
             this.toolStripButtonLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonLog.Image = global::TFG.Properties.Resources.icons8_log_50;
+            this.toolStripButtonLog.Image = global::TFG.Properties.Resources.icons8_folder_50;
             this.toolStripButtonLog.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonLog.Name = "toolStripButtonLog";
             this.toolStripButtonLog.Size = new System.Drawing.Size(34, 34);

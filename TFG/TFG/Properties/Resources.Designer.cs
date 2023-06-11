@@ -183,6 +183,16 @@ namespace TFG.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_folder_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-folder-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_importar_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-importar-30", resourceCulture);
