@@ -33,6 +33,7 @@ namespace TFG
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClienteLog));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -65,7 +66,6 @@ namespace TFG
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveStripButton = new System.Windows.Forms.ToolStripButton();
             this.printStripButton = new System.Windows.Forms.ToolStripButton();
@@ -102,16 +102,17 @@ namespace TFG
             this.exportartoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonreload = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDetalles = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStripFile.SuspendLayout();
             this.contextMenuStripList.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -144,12 +145,23 @@ namespace TFG
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.HideSelection = false;
-            this.richTextBox1.Location = new System.Drawing.Point(5, 62);
+            this.richTextBox1.Location = new System.Drawing.Point(5, 66);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(988, 633);
+            this.richTextBox1.Size = new System.Drawing.Size(988, 629);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.cambioSeleccion);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(5, 695);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(988, 34);
+            this.statusStrip1.TabIndex = 20;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStrip1
             // 
@@ -181,7 +193,7 @@ namespace TFG
             this.bulletListStripButton,
             this.toolStripSeparator8,
             this.zoomDropDownButton});
-            this.toolStrip1.Location = new System.Drawing.Point(5, 31);
+            this.toolStrip1.Location = new System.Drawing.Point(5, 35);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(988, 31);
             this.toolStrip1.TabIndex = 18;
@@ -250,7 +262,7 @@ namespace TFG
             this.menuStrip1.Location = new System.Drawing.Point(5, 5);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(988, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(988, 30);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -264,7 +276,7 @@ namespace TFG
             this.toolStripSeparator7,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(73, 28);
             this.fileToolStripMenuItem.Text = "&Archivo";
             // 
             // toolStripSeparator11
@@ -289,7 +301,7 @@ namespace TFG
             this.deleteToolStripMenuItem,
             this.selectAllToolStripMenuItem1});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(62, 28);
             this.editToolStripMenuItem.Text = "&Editar";
             // 
             // toolStripSeparator6
@@ -309,7 +321,6 @@ namespace TFG
             this.listView1.Margin = new System.Windows.Forms.Padding(10);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(545, 693);
-            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView1_AfterLabelEdit);
@@ -330,7 +341,8 @@ namespace TFG
             this.exportartoolStripButton,
             this.toolStripSeparator12,
             this.toolStripButton2,
-            this.toolStripButtonreload});
+            this.toolStripButtonreload,
+            this.toolStripButtonDetalles});
             this.toolStrip2.Location = new System.Drawing.Point(5, 5);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(545, 31);
@@ -439,17 +451,6 @@ namespace TFG
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(5, 695);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(988, 34);
-            this.statusStrip1.TabIndex = 20;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
@@ -792,6 +793,16 @@ namespace TFG
             this.toolStripButtonreload.Text = "Recargar";
             this.toolStripButtonreload.Click += new System.EventHandler(this.toolStripButtonreload_Click);
             // 
+            // toolStripButtonDetalles
+            // 
+            this.toolStripButtonDetalles.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDetalles.Image = global::TFG.Properties.Resources.icons8_details_30;
+            this.toolStripButtonDetalles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDetalles.Name = "toolStripButtonDetalles";
+            this.toolStripButtonDetalles.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButtonDetalles.Text = "Vista Destalles";
+            this.toolStripButtonDetalles.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // FormClienteLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -807,6 +818,8 @@ namespace TFG
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -815,8 +828,6 @@ namespace TFG
             this.toolStrip2.PerformLayout();
             this.contextMenuStripFile.ResumeLayout(false);
             this.contextMenuStripList.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -894,5 +905,6 @@ namespace TFG
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDetalles;
     }
 }

@@ -163,6 +163,16 @@ namespace TFG.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_details_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-details-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_exportar_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-exportar-30", resourceCulture);

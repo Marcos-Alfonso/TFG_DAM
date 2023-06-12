@@ -81,6 +81,7 @@ namespace TFG
             {
                 fontSizeComboBox.Items.Add(i);
             }
+
         }
 
 
@@ -97,22 +98,35 @@ namespace TFG
 
                 ImageList il = new ImageList();
                 il.ImageSize = new Size(50, 50);
+                ImageList small = new ImageList();
+                small.ImageSize = new Size(20, 20);
                 int count = 0;
 
                 foreach (string carpeta in carpetas)
                 {
                     ListViewItem i = listView1.Items.Add(Path.GetFileName(carpeta), count++);
+
                     i.Tag = "carpeta";
+
+                    DirectoryInfo directorio = new DirectoryInfo(carpeta);
+                    long tamanoEnBytes = directorio.EnumerateFiles("*.*", SearchOption.AllDirectories)
+                                                .Sum(f => f.Length);
+                    i.SubItems.Add(formatoTamanio(tamanoEnBytes));
+
+                    int cantidad = Directory.GetFiles(carpeta).Length + Directory.GetDirectories(carpeta).Length;
+                    i.SubItems.Add(cantidad.ToString());
 
                     var files = Directory.GetFiles(carpeta).Length;
                     if (files >0)
                     {
                         il.Images.Add(Resources.folderFull);
+                        small.Images.Add(Resources.folderFull);
 
                     }
                     else
                     {
                         il.Images.Add(Resources.folder);
+                        small.Images.Add(Resources.folder);
                     }
                 }
 
@@ -127,19 +141,46 @@ namespace TFG
 
                     Image imagen = icono.ToBitmap();
 
+
                     ListViewItem i = listView1.Items.Add(nombreArchivo, nombreArchivo, count++);
+                    FileInfo fi = new FileInfo(archivo);
+                    float size = (float)fi.Length;
+                    i.SubItems.Add(formatoTamanio(size));
+
                     i.Tag = "archivo";
                     il.Images.Add(imagen);
+                    small.Images.Add(imagen);
 
                 }
                 listView1.LargeImageList = il;
+                listView1.SmallImageList = small;
+
+                listView1.Columns.Clear();
+                listView1.Columns.Add("Nombre").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                listView1.Columns.Add("Tamaño").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                listView1.Columns.Add("Nº").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
 
             }
             toolStripButtonBack.Enabled = (carpetaActual != carpetaCliente);
+
         }
 
+        private string formatoTamanio(float size)
+        {
+            if (size<999.0)
+            {
+                return size+" bytes";
+            }else if (size < 999999.0)
+            {
+                return (int)(size / 1000) + " KB";
+            }
+            else
+            {
+                return (int)(size / 1000000) + " MB";
+            }
 
-
+            return "~";
+        }
 
         void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -521,6 +562,15 @@ namespace TFG
                     string carpetaDestino = dialog.SelectedPath;
                     string archivoComprimido = Path.Combine(carpetaDestino, idCliente + ".zip");
 
+                    if (File.Exists(archivoComprimido))
+                    {
+                        MessageBox.Show("El archivo comprimido ya existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    try
+                    {
+
+
                     // Comprimir la carpetaCliente en un archivo comprimido
                     ZipFile.CreateFromDirectory(carpetaCliente, archivoComprimido);
 
@@ -532,12 +582,16 @@ namespace TFG
                         {
                             entry.Delete();
                         }
-
-                        // Guardar los cambios en el archivo ZIP
                         zip.Dispose();
                     }
 
                     MessageBox.Show("Carpeta comprimida exitosamente.");
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
                 }
             }
         }
@@ -1193,6 +1247,22 @@ namespace TFG
             return validExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase);
         }
 
-
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (listView1.View == View.LargeIcon)
+            {
+                listView1.View = View.Details;
+                //listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                foreach (ColumnHeader column in listView1.Columns)
+                {
+                    column.Width = -2;
+                }
+            }
+            else
+            {
+                listView1.View = View.LargeIcon;
+            }
+            toolStripButtonDetalles.Checked = !toolStripButtonDetalles.Checked;
+        }
     }
 }
