@@ -357,6 +357,7 @@ namespace TFG
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //primera version Solo elimina uno:
             if (listView1.SelectedItems.Count > 0)
             {
                 ListViewItem selectedItem = listView1.SelectedItems[0];
@@ -394,6 +395,39 @@ namespace TFG
                     }
                 }
 
+            }
+
+
+            if (listView1.SelectedItems.Count > 1)
+            {
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar los elementos seleccionados?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    foreach (ListViewItem selectedItem in listView1.SelectedItems)
+                    {
+                        string fileName = selectedItem.Text;
+                        string filePath = Path.Combine(carpetaActual, fileName);
+
+                        if (selectedItem.Tag == "carpeta" && Directory.Exists(filePath))
+                        {
+                            if (Directory.GetFiles(filePath).Length == 0 && Directory.GetDirectories(filePath).Length == 0)
+                            {
+                                Directory.Delete(filePath);
+                            }
+                            else
+                            {
+                                Directory.Delete(filePath, true);
+                            }
+                        }
+                        else if (File.Exists(filePath))
+                        {
+                            File.Delete(filePath);
+                        }
+                    }
+
+                    loadFiles();
+                }
             }
         }
 
@@ -463,14 +497,22 @@ namespace TFG
 
             if (filePaths.Length > 0)
             {
-                string rutaOrigen = filePaths[0];
-                string rutaDestino = Path.Combine(carpetaActual, Path.GetFileName(rutaOrigen));
+                foreach (string path in filePaths)
+                {
+                    string rutaOrigen = path;
+                    string rutaDestino = Path.Combine(carpetaActual, Path.GetFileName(rutaOrigen));
 
-                Directory.CreateDirectory(carpetaGeneral);
-                Directory.CreateDirectory(carpetaCliente);
+                    Directory.CreateDirectory(carpetaGeneral);
+                    Directory.CreateDirectory(carpetaCliente);
 
+                    try
+                    {
+                        File.Copy(rutaOrigen, rutaDestino, true);
+                    }
+                    catch (Exception)
+                    { }
 
-                File.Copy(rutaOrigen, rutaDestino, true);
+                }
                 loadFiles();
             }
         }
@@ -642,23 +684,35 @@ namespace TFG
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                ListViewItem selectedItem = listView1.SelectedItems[0];
-                string selectedItemText = selectedItem.Text;
-                string selectedItemPath = Path.Combine(carpetaActual, selectedItemText);
-
-                string carpetaPadre = Directory.GetParent(carpetaActual).FullName;
-
-                // Mover el item a la carpeta padre
-                string nuevoPath = Path.Combine(carpetaPadre, selectedItemText);
-                if (selectedItem.Tag == "carpeta")
+                foreach (ListViewItem selectedItem in listView1.SelectedItems )
                 {
-                    Directory.Move(selectedItemPath, nuevoPath);
-                }
-                else
-                {
-                    File.Move(selectedItemPath, nuevoPath);
-                }
+                    //ListViewItem selectedItem = listView1.SelectedItems[0];
+                    string selectedItemText = selectedItem.Text;
+                    string selectedItemPath = Path.Combine(carpetaActual, selectedItemText);
 
+                    string carpetaPadre = Directory.GetParent(carpetaActual).FullName;
+
+                    // Mover el item a la carpeta padre
+                    string nuevoPath = Path.Combine(carpetaPadre, selectedItemText);
+
+                    try // en caso de que ya exista una carpeta o fichero con el nombre
+                    {
+                        if (selectedItem.Tag == "carpeta")
+                        {
+                            Directory.Move(selectedItemPath, nuevoPath);
+                        }
+                        else
+                        {
+                            File.Move(selectedItemPath, nuevoPath);
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+
+                }
 
                 loadFiles(); // Actualizar la vista del ListView
             }

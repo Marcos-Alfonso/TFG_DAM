@@ -145,9 +145,9 @@ namespace TFG
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.HideSelection = false;
-            this.richTextBox1.Location = new System.Drawing.Point(5, 66);
+            this.richTextBox1.Location = new System.Drawing.Point(5, 62);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(988, 629);
+            this.richTextBox1.Size = new System.Drawing.Size(988, 633);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.cambioSeleccion);
@@ -193,7 +193,7 @@ namespace TFG
             this.bulletListStripButton,
             this.toolStripSeparator8,
             this.zoomDropDownButton});
-            this.toolStrip1.Location = new System.Drawing.Point(5, 35);
+            this.toolStrip1.Location = new System.Drawing.Point(5, 31);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(988, 31);
             this.toolStrip1.TabIndex = 18;
@@ -262,7 +262,7 @@ namespace TFG
             this.menuStrip1.Location = new System.Drawing.Point(5, 5);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(988, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(988, 26);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 

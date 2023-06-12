@@ -368,6 +368,7 @@ namespace TFG
                         dtClientes.Rows.RemoveAt(row.Index);
                         unsavedChanges = true;
                         toolStripButtonSave.Enabled = true;
+                        toolStripButtonUndo.Enabled = true;
                     }
                 }
             }
@@ -585,6 +586,8 @@ namespace TFG
             ds.Tables["cliente"].Clear();
             iniciaDTG();
             unsavedChanges = false;
+            toolStripButtonSave.Enabled = false;
+            toolStripButtonUndo.Enabled = false;
 
         }
 

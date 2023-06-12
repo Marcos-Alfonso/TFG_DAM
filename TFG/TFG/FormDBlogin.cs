@@ -35,7 +35,7 @@ namespace TFG
             limpiaCampos();
             String query = $"server={tbServer.Text};uid={tbUser.Text};pwd={tbPass.Text};database={tbTabla.Text}";
             //query = "server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso;";
-
+            this.Cursor = Cursors.WaitCursor;
             try
             {
                 Program.conn = new MySqlConnection(query);
@@ -48,11 +48,8 @@ namespace TFG
                 {
                     List<string> tablas = new List<string>
                         {
-                            "cliente",
-                            "usuario",
-                            "cita",
-                            "MUNICIPIOS",
-                            "PROVINCIAS"
+                            "cliente","usuario","cita",
+                            "MUNICIPIOS","PROVINCIAS"
                         };
 
                     foreach (string s in tablas)
@@ -81,6 +78,7 @@ namespace TFG
                         Settings1.Default.dbBase = tbTabla.Text;
                         Settings1.Default.Save();
                     }
+                    this.Cursor = Cursors.Default;
                     this.Close();
                 }
 
@@ -116,6 +114,10 @@ namespace TFG
                         break;
                 }
 
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
             }
 
         }
