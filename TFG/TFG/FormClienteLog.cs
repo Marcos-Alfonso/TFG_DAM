@@ -117,7 +117,7 @@ namespace TFG
                     i.SubItems.Add(cantidad.ToString());
 
                     var files = Directory.GetFiles(carpeta).Length;
-                    if (files >0)
+                    if (files > 0)
                     {
                         il.Images.Add(Resources.folderFull);
                         small.Images.Add(Resources.folderFull);
@@ -161,16 +161,28 @@ namespace TFG
                 listView1.Columns.Add("Nº").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
 
             }
+            if (carpetaActual != carpetaCliente)
+            {
+                string subCarpetaActual = carpetaActual.Substring(carpetaActual.LastIndexOf(idCliente)+idCliente.Length);
+                labelCarpeta.Text = subCarpetaActual;
+                labelCarpeta.Enabled = true;
+            }
+            else
+            {
+                labelCarpeta.Text = "Carpeta Raíz";
+                labelCarpeta.Enabled = false;
+            }
             toolStripButtonBack.Enabled = (carpetaActual != carpetaCliente);
 
         }
 
         private string formatoTamanio(float size)
         {
-            if (size<999.0)
+            if (size < 999.0)
             {
-                return size+" bytes";
-            }else if (size < 999999.0)
+                return size + " bytes";
+            }
+            else if (size < 999999.0)
             {
                 return (int)(size / 1000) + " KB";
             }
@@ -473,6 +485,10 @@ namespace TFG
                     {
                         if (draggedItem.Tag == "carpeta")
                         {
+                            if (rutaArchivo == carpetaDestino)
+                            {
+                                return;
+                            }
                             Directory.Move(rutaArchivo, Path.Combine(carpetaDestino, draggedItem.Text));
                         }
                         else if (draggedItem.Text != "log.rtf")
@@ -485,8 +501,9 @@ namespace TFG
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al mover el archivo: " + ex.Message);
+                        MessageBox.Show("Error al mover el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 }
             }
 
@@ -613,21 +630,21 @@ namespace TFG
                     {
 
 
-                    // Comprimir la carpetaCliente en un archivo comprimido
-                    ZipFile.CreateFromDirectory(carpetaCliente, archivoComprimido);
+                        // Comprimir la carpetaCliente en un archivo comprimido
+                        ZipFile.CreateFromDirectory(carpetaCliente, archivoComprimido);
 
-                    // Eliminar el archivo "log.rtf" del archivo ZIP
-                    using (ZipArchive zip = ZipFile.Open(archivoComprimido, ZipArchiveMode.Update))
-                    {
-                        ZipArchiveEntry entry = zip.GetEntry("log.rtf");
-                        if (entry != null)
+                        // Eliminar el archivo "log.rtf" del archivo ZIP
+                        using (ZipArchive zip = ZipFile.Open(archivoComprimido, ZipArchiveMode.Update))
                         {
-                            entry.Delete();
+                            ZipArchiveEntry entry = zip.GetEntry("log.rtf");
+                            if (entry != null)
+                            {
+                                entry.Delete();
+                            }
+                            zip.Dispose();
                         }
-                        zip.Dispose();
-                    }
 
-                    MessageBox.Show("Carpeta comprimida exitosamente.");
+                        MessageBox.Show("Carpeta comprimida exitosamente.");
                     }
                     catch (Exception)
                     {
@@ -652,31 +669,31 @@ namespace TFG
                 try
                 {
 
-                Directory.CreateDirectory(carpetaGeneral);
-                Directory.CreateDirectory(carpetaCliente);
+                    Directory.CreateDirectory(carpetaGeneral);
+                    Directory.CreateDirectory(carpetaCliente);
 
-                using (ZipArchive archive = ZipFile.OpenRead(archivoZip))
-                {
-                    foreach (ZipArchiveEntry file in archive.Entries)
+                    using (ZipArchive archive = ZipFile.OpenRead(archivoZip))
                     {
-                        string completeFileName = Path.Combine(carpetaCliente, file.FullName);
-                        string directory = Path.GetDirectoryName(completeFileName);
+                        foreach (ZipArchiveEntry file in archive.Entries)
+                        {
+                            string completeFileName = Path.Combine(carpetaCliente, file.FullName);
+                            string directory = Path.GetDirectoryName(completeFileName);
 
-                        if (!Directory.Exists(directory))
-                            Directory.CreateDirectory(directory);
+                            if (!Directory.Exists(directory))
+                                Directory.CreateDirectory(directory);
 
-                        if (file.Name != "")
-                            file.ExtractToFile(completeFileName, true);
+                            if (file.Name != "")
+                                file.ExtractToFile(completeFileName, true);
+                        }
                     }
+
+                    loadFiles();
+
                 }
-
-                loadFiles();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al descomprimir el archivo ZIP: " + ex.Message, "Importar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al descomprimir el archivo ZIP: " + ex.Message, "Importar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
         }
@@ -684,7 +701,7 @@ namespace TFG
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                foreach (ListViewItem selectedItem in listView1.SelectedItems )
+                foreach (ListViewItem selectedItem in listView1.SelectedItems)
                 {
                     //ListViewItem selectedItem = listView1.SelectedItems[0];
                     string selectedItemText = selectedItem.Text;
@@ -1057,7 +1074,7 @@ namespace TFG
         {
             float zoomPercent = Convert.ToSingle(e.ClickedItem.Text.Trim('%'));
             richTextBox1.ZoomFactor = zoomPercent / 100;
-            zoomDropDownButton.Text = "Zoom "+zoomPercent+"%";
+            zoomDropDownButton.Text = "Zoom " + zoomPercent + "%";
         }
 
 
@@ -1078,7 +1095,7 @@ namespace TFG
                 statusStrip1.Visible = true;
 
                 Timer timer = new Timer();
-                timer.Interval = 3000; 
+                timer.Interval = 3000;
                 timer.Tick += (sender2, e2) =>
                 {
                     statusStrip1.Visible = false;
