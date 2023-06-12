@@ -313,7 +313,7 @@ namespace TFG
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al renombrar la carpeta: " + ex.Message);
+                        MessageBox.Show("Error al renombrar la carpeta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
