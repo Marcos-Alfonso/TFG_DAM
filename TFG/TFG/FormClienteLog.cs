@@ -739,20 +739,7 @@ namespace TFG
         //********************************
         private void saveStripButton_Click(object sender, EventArgs e)
         {
-            try
-            {
 
-                Directory.CreateDirectory(carpetaGeneral);
-                Directory.CreateDirectory(carpetaCliente);
-
-                richTextBox1.SaveFile(rutaFichero, RichTextBoxStreamType.RichText);
-                loadFiles();
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al guardar el archivo: {ex.Message}");
-            }
         }
 
 
@@ -1090,6 +1077,7 @@ namespace TFG
 
                 // Guardar el contenido del RichTextBox en el archivo en formato RTF
                 richTextBox1.SaveFile(rutaFichero, RichTextBoxStreamType.RichText);
+                richTextBox1.ClearUndo();
                 loadFiles();
 
                 statusStrip1.Visible = true;
@@ -1347,6 +1335,26 @@ namespace TFG
                 listView1.View = View.LargeIcon;
             }
             toolStripButtonDetalles.Checked = !toolStripButtonDetalles.Checked;
+        }
+
+        private void FormClienteLog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (richTextBox1.CanUndo)
+            {
+                DialogResult result = MessageBox.Show("¿Desea guardar los cambios antes de cerrar?", "Guardar cambios", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    Directory.CreateDirectory(carpetaGeneral);
+                    Directory.CreateDirectory(carpetaCliente);
+                    richTextBox1.SaveFile(rutaFichero, RichTextBoxStreamType.RichText);
+                    loadFiles();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }
