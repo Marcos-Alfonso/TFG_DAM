@@ -91,6 +91,7 @@ namespace TFG
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonreload = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDetalles = new System.Windows.Forms.ToolStripButton();
+            this.labelCarpeta = new System.Windows.Forms.ToolStripLabel();
             this.contextMenuStripFile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,7 +104,6 @@ namespace TFG
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.labelCarpeta = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -148,7 +148,7 @@ namespace TFG
             this.richTextBox1.HideSelection = false;
             this.richTextBox1.Location = new System.Drawing.Point(5, 62);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(988, 633);
+            this.richTextBox1.Size = new System.Drawing.Size(988, 667);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.cambioSeleccion);
@@ -162,7 +162,7 @@ namespace TFG
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(988, 34);
             this.statusStrip1.TabIndex = 20;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.Visible = false;
             // 
             // toolStripStatusLabel1
             // 
@@ -712,6 +712,15 @@ namespace TFG
             this.toolStripButtonDetalles.Text = "Vista Destalles";
             this.toolStripButtonDetalles.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // labelCarpeta
+            // 
+            this.labelCarpeta.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.labelCarpeta.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCarpeta.Name = "labelCarpeta";
+            this.labelCarpeta.Size = new System.Drawing.Size(118, 28);
+            this.labelCarpeta.Text = "Carpeta Raíz";
+            this.labelCarpeta.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            // 
             // contextMenuStripFile
             // 
             this.contextMenuStripFile.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -804,15 +813,6 @@ namespace TFG
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // labelCarpeta
-            // 
-            this.labelCarpeta.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.labelCarpeta.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCarpeta.Name = "labelCarpeta";
-            this.labelCarpeta.Size = new System.Drawing.Size(118, 28);
-            this.labelCarpeta.Text = "Carpeta Raíz";
-            this.labelCarpeta.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // FormClienteLog
             // 

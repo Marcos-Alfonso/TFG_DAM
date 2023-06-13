@@ -1275,6 +1275,17 @@ namespace TFG
                 var item = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
 
                 string text = item.Text;
+                string rutaFichero = Path.Combine(carpetaCliente, Path.GetFileName(text));
+                if (IsImageFile(rutaFichero))
+                {
+                    
+                    Image image = Image.FromFile(rutaFichero);
+
+                    // Inserta la imagen en el RichTextBox.
+                    Clipboard.SetImage(image);
+                    ((RichTextBox)sender).Paste();
+                    return;
+                }
 
                 richTextBox1.SelectedText = text;
             }
@@ -1286,16 +1297,19 @@ namespace TFG
 
             if (filePaths.Length > 0)
             {
+
+
+                /*
                 string rutaOrigen = filePaths[0];
                 string rutaDestino = Path.Combine(carpetaCliente, Path.GetFileName(rutaOrigen));
-
+                
                 Directory.CreateDirectory(carpetaGeneral);
                 Directory.CreateDirectory(carpetaCliente);
 
                 File.Copy(rutaOrigen, rutaDestino, true);
                 loadFiles();
+                */
 
-                /*
                 // Verifica si el archivo es una imagen.
                 if (IsImageFile(filePaths[0]))
                 {
@@ -1306,7 +1320,6 @@ namespace TFG
                     Clipboard.SetImage(image);
                     ((RichTextBox)sender).Paste();
                 }
-                */
             }
         }
 
