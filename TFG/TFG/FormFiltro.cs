@@ -167,6 +167,7 @@ namespace TFG
             formClientes.ds.Tables["cliente"].Clear();
             formClientes.iniciaDTG();
 
+            formClientes.BringToFront();
         }
         private bool todosVacios()
         {

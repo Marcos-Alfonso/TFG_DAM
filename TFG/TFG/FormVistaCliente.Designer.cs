@@ -45,15 +45,17 @@ namespace TFG
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbMod = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonArchivos = new System.Windows.Forms.ToolStripButton();
-            this.tsbCitas = new System.Windows.Forms.ToolStripButton();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tbDireccion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.tsbMod = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonArchivos = new System.Windows.Forms.ToolStripButton();
+            this.tsbCitas = new System.Windows.Forms.ToolStripButton();
+            this.btBuscarMail = new System.Windows.Forms.ToolStripButton();
+            this.btEscribirMail = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,47 +208,19 @@ namespace TFG
             this.tsbMod,
             this.toolStripSeparator1,
             this.toolStripButtonArchivos,
-            this.tsbCitas});
+            this.tsbCitas,
+            this.btBuscarMail,
+            this.btEscribirMail});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(567, 37);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tsbMod
-            // 
-            this.tsbMod.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbMod.Image = global::TFG.Properties.Resources.mod;
-            this.tsbMod.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbMod.Name = "tsbMod";
-            this.tsbMod.Size = new System.Drawing.Size(34, 34);
-            this.tsbMod.Text = "Editar";
-            this.tsbMod.Click += new System.EventHandler(this.tsbMod_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
-            // 
-            // toolStripButtonArchivos
-            // 
-            this.toolStripButtonArchivos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonArchivos.Image = global::TFG.Properties.Resources.icons8_folder_50;
-            this.toolStripButtonArchivos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonArchivos.Name = "toolStripButtonArchivos";
-            this.toolStripButtonArchivos.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonArchivos.Text = "Ver FIchero";
-            this.toolStripButtonArchivos.Click += new System.EventHandler(this.toolStripButtonArchivos_Click);
-            // 
-            // tsbCitas
-            // 
-            this.tsbCitas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCitas.Image = global::TFG.Properties.Resources.icons8_date_50;
-            this.tsbCitas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCitas.Name = "tsbCitas";
-            this.tsbCitas.Size = new System.Drawing.Size(34, 34);
-            this.tsbCitas.Text = "Ver citas";
-            this.tsbCitas.Click += new System.EventHandler(this.tsbCitas_Click);
             // 
             // tbEmail
             // 
@@ -294,6 +268,56 @@ namespace TFG
             this.label6.Size = new System.Drawing.Size(81, 20);
             this.label6.TabIndex = 18;
             this.label6.Text = "Dirección";
+            // 
+            // tsbMod
+            // 
+            this.tsbMod.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbMod.Image = global::TFG.Properties.Resources.mod;
+            this.tsbMod.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbMod.Name = "tsbMod";
+            this.tsbMod.Size = new System.Drawing.Size(34, 34);
+            this.tsbMod.Text = "Editar";
+            this.tsbMod.Click += new System.EventHandler(this.tsbMod_Click);
+            // 
+            // toolStripButtonArchivos
+            // 
+            this.toolStripButtonArchivos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonArchivos.Image = global::TFG.Properties.Resources.icons8_folder_50;
+            this.toolStripButtonArchivos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonArchivos.Name = "toolStripButtonArchivos";
+            this.toolStripButtonArchivos.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonArchivos.Text = "Ver FIchero";
+            this.toolStripButtonArchivos.Click += new System.EventHandler(this.toolStripButtonArchivos_Click);
+            // 
+            // tsbCitas
+            // 
+            this.tsbCitas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCitas.Image = global::TFG.Properties.Resources.icons8_date_50;
+            this.tsbCitas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCitas.Name = "tsbCitas";
+            this.tsbCitas.Size = new System.Drawing.Size(34, 34);
+            this.tsbCitas.Text = "Ver citas";
+            this.tsbCitas.Click += new System.EventHandler(this.tsbCitas_Click);
+            // 
+            // btBuscarMail
+            // 
+            this.btBuscarMail.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btBuscarMail.Image = global::TFG.Properties.Resources.icons8_mail_50_Search;
+            this.btBuscarMail.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btBuscarMail.Name = "btBuscarMail";
+            this.btBuscarMail.Size = new System.Drawing.Size(34, 34);
+            this.btBuscarMail.Text = "Ver correos";
+            this.btBuscarMail.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // btEscribirMail
+            // 
+            this.btEscribirMail.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btEscribirMail.Image = global::TFG.Properties.Resources.icons8_mail_50;
+            this.btEscribirMail.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btEscribirMail.Name = "btEscribirMail";
+            this.btEscribirMail.Size = new System.Drawing.Size(34, 34);
+            this.btEscribirMail.Text = "Escribir correo";
+            this.btEscribirMail.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // FormVistaCliente
             // 
@@ -355,5 +379,7 @@ namespace TFG
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbCitas;
+        private System.Windows.Forms.ToolStripButton btBuscarMail;
+        private System.Windows.Forms.ToolStripButton btEscribirMail;
     }
 }

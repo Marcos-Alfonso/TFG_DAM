@@ -361,6 +361,8 @@
     <None Include="Resources\icons8-check-50.png" />
     <None Include="Resources\icons8-folder-50.png" />
     <None Include="Resources\icons8-details-30.png" />
+    <None Include="Resources\icons8-mail-50 Search.png" />
+    <None Include="Resources\icons8-mail-50.png" />
     <Content Include="Resources\modify.png" />
   </ItemGroup>
   <ItemGroup>

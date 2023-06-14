@@ -64,6 +64,8 @@ namespace TFG
             tsbMod.Enabled = false;
             toolStripButtonArchivos.Enabled = false;
             tsbCitas.Enabled = false;
+            btBuscarMail.Enabled = false;
+            btEscribirMail.Enabled = false;
             button1.Visible = true;
         }
 
@@ -82,6 +84,8 @@ namespace TFG
             tsbMod.Enabled = true;
             toolStripButtonArchivos.Enabled = true;
             tsbCitas.Enabled = true;
+            btBuscarMail.Enabled = true;
+            btEscribirMail.Enabled = true;
             button1.Visible = false;
             this.Text = "Visualizando cliente: " + tbNombre.Text;
         }
@@ -492,6 +496,38 @@ namespace TFG
         {
             FormCalendario f = new FormCalendario(id);
             f.ShowDialog();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (tbEmail.Text != "")
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start($"https://mail.google.com/mail/u/0/#search/{tbEmail.Text} ");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al abrir correo: {ex.Message}");
+                }
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (tbEmail.Text != "")
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start($"https://mail.google.com/mail/u/0/?view=cm&fs=1&to={tbEmail.Text} ");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al abrir correo: {ex.Message}");
+                }
+            }
         }
     }
 }

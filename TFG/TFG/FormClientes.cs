@@ -688,5 +688,41 @@ namespace TFG
             }
         }
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://mail.google.com/mail/u/0/?view=cm&fs=1&to=correo@gmail.com");
+        }
+
+        private void escribirCorreoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dtClientes.SelectedRows.Count == 1)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start($"https://mail.google.com/mail/u/0/?view=cm&fs=1&to={dtClientes.SelectedRows[0].Cells["email"].Value} ");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al abrir correo: {ex.Message}");
+                }
+            }
+        }
+
+        private void verCorreosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dtClientes.SelectedRows.Count == 1)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start($"https://mail.google.com/mail/u/0/#search/{dtClientes.SelectedRows[0].Cells["email"].Value} ");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al abrir correo: {ex.Message}");
+                }
+            }
+        }
     }
 }

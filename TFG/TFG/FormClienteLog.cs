@@ -464,7 +464,6 @@ namespace TFG
             string[] filePaths = (string[])e.Data.GetData(DataFormats.FileDrop);
 
 
-
             if (e.Data.GetDataPresent(typeof(ListViewItem)))
             {
 
@@ -495,7 +494,6 @@ namespace TFG
                         {
                             File.Move(rutaArchivo, Path.Combine(carpetaDestino, draggedItem.Text));
                         }
-
 
                         loadFiles();
                     }
