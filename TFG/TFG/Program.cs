@@ -12,7 +12,6 @@ namespace TFG
     {
         public static String userId = "";
         public static MySqlConnection conn = new MySqlConnection();
-        //public static string user = "";
 
         /// <summary>
         /// Punto de entrada principal para la aplicación.

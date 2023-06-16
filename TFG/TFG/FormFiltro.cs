@@ -118,7 +118,6 @@ namespace TFG
                     {
                         where += $" ({tb.Name} LIKE '%{tb.Text}%') ";
                     }
-                    
 
                     count++;
 

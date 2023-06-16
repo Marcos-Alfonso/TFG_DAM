@@ -34,12 +34,10 @@ namespace TFG
         {
             limpiaCampos();
             String query = $"server={tbServer.Text};uid={tbUser.Text};pwd={tbPass.Text};database={tbTabla.Text}";
-            //query = "server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso;";
             this.Cursor = Cursors.WaitCursor;
             try
             {
                 Program.conn = new MySqlConnection(query);
-                // Program.conn  = new MySqlConnection("server=www.ieslamarisma.net;uid=marcosalfonso;pwd=2pTb92m@;database=marcosalfonso");
                 Program.conn.Open();
 
                 bool tablasExistentes = true;

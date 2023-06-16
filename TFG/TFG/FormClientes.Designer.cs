@@ -30,9 +30,9 @@ namespace TFG
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -40,28 +40,13 @@ namespace TFG
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dtClientes = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusRegistro = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.verClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verArchivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.escribirCorreoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verCorreosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonmodify = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonFiltro = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonLog = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCitas = new System.Windows.Forms.ToolStripButton();
-            this.tsbSettings = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonExportar = new System.Windows.Forms.ToolStripButton();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,12 +56,27 @@ namespace TFG
             this.toolClienteLog = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExportDB = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemCitas = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusError = new System.Windows.Forms.ToolStripStatusLabel();
-            this.verClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verArchivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusRegistro = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonmodify = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonFiltro = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonLog = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCitas = new System.Windows.Forms.ToolStripButton();
+            this.tsbSettings = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonExportar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -155,10 +155,10 @@ namespace TFG
             this.dtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.dtFiltro.Name = "dtFiltro";
             this.dtFiltro.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtFiltro.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtFiltro.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtFiltro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtFiltro.Size = new System.Drawing.Size(121, 0);
             this.dtFiltro.TabIndex = 0;
@@ -181,19 +181,19 @@ namespace TFG
             this.dtClientes.AllowUserToDeleteRows = false;
             this.dtClientes.AllowUserToOrderColumns = true;
             this.dtClientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
-            this.dtClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            this.dtClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtClientes.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtClientes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dtClientes.Location = new System.Drawing.Point(0, 0);
@@ -219,6 +219,54 @@ namespace TFG
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(180, 160);
             // 
+            // verClienteToolStripMenuItem
+            // 
+            this.verClienteToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_user_48;
+            this.verClienteToolStripMenuItem.Name = "verClienteToolStripMenuItem";
+            this.verClienteToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.verClienteToolStripMenuItem.Text = "&Ver Cliente";
+            this.verClienteToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // verArchivosToolStripMenuItem
+            // 
+            this.verArchivosToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_log_50;
+            this.verArchivosToolStripMenuItem.Name = "verArchivosToolStripMenuItem";
+            this.verArchivosToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.verArchivosToolStripMenuItem.Text = "&Ver archivos";
+            this.verArchivosToolStripMenuItem.Click += new System.EventHandler(this.toolClienteLog_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_minus_50;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.eliminarToolStripMenuItem.Text = "&Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Image = global::TFG.Properties.Resources.modify;
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.modificarToolStripMenuItem.Text = "&Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.abreModificar);
+            // 
+            // escribirCorreoToolStripMenuItem
+            // 
+            this.escribirCorreoToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_mail_50;
+            this.escribirCorreoToolStripMenuItem.Name = "escribirCorreoToolStripMenuItem";
+            this.escribirCorreoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.escribirCorreoToolStripMenuItem.Text = "&Escribir Correo";
+            this.escribirCorreoToolStripMenuItem.Click += new System.EventHandler(this.escribirCorreoToolStripMenuItem_Click);
+            // 
+            // verCorreosToolStripMenuItem
+            // 
+            this.verCorreosToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_mail_50_Search;
+            this.verCorreosToolStripMenuItem.Name = "verCorreosToolStripMenuItem";
+            this.verCorreosToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.verCorreosToolStripMenuItem.Text = "&Ver Correos";
+            this.verCorreosToolStripMenuItem.Click += new System.EventHandler(this.verCorreosToolStripMenuItem_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
@@ -243,206 +291,6 @@ namespace TFG
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabel1,
-            this.toolStripStatusError,
-            this.toolStripStatusRegistro});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 691);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1549, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(133, 23);
-            this.toolStripProgressBar1.Visible = false;
-            // 
-            // toolStripStatusRegistro
-            // 
-            this.toolStripStatusRegistro.Name = "toolStripStatusRegistro";
-            this.toolStripStatusRegistro.Size = new System.Drawing.Size(0, 16);
-            this.toolStripStatusRegistro.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAdd,
-            this.toolStripButtonDelete,
-            this.toolStripButtonmodify,
-            this.toolStripSeparator3,
-            this.toolStripButtonFiltro,
-            this.toolStripSeparator1,
-            this.toolStripButtonUndo,
-            this.toolStripButtonSave,
-            this.toolStripSeparator2,
-            this.toolStripButton1,
-            this.toolStripButtonLog,
-            this.toolStripButtonCitas,
-            this.tsbSettings,
-            this.toolStripSeparator4,
-            this.toolStripButtonExportar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1549, 37);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 37);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 37);
-            // 
-            // escribirCorreoToolStripMenuItem
-            // 
-            this.escribirCorreoToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_mail_50;
-            this.escribirCorreoToolStripMenuItem.Name = "escribirCorreoToolStripMenuItem";
-            this.escribirCorreoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.escribirCorreoToolStripMenuItem.Text = "&Escribir Correo";
-            this.escribirCorreoToolStripMenuItem.Click += new System.EventHandler(this.escribirCorreoToolStripMenuItem_Click);
-            // 
-            // verCorreosToolStripMenuItem
-            // 
-            this.verCorreosToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_mail_50_Search;
-            this.verCorreosToolStripMenuItem.Name = "verCorreosToolStripMenuItem";
-            this.verCorreosToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.verCorreosToolStripMenuItem.Text = "&Ver Correos";
-            this.verCorreosToolStripMenuItem.Click += new System.EventHandler(this.verCorreosToolStripMenuItem_Click);
-            // 
-            // toolStripButtonAdd
-            // 
-            this.toolStripButtonAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAdd.Image = global::TFG.Properties.Resources.icons8_add_48;
-            this.toolStripButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAdd.Name = "toolStripButtonAdd";
-            this.toolStripButtonAdd.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonAdd.Text = "Añadir";
-            this.toolStripButtonAdd.Click += new System.EventHandler(this.toolStripButtonAdd_Click);
-            // 
-            // toolStripButtonDelete
-            // 
-            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelete.Image = global::TFG.Properties.Resources.icons8_minus_50;
-            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonDelete.Text = "Eliminar";
-            this.toolStripButtonDelete.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
-            // 
-            // toolStripButtonmodify
-            // 
-            this.toolStripButtonmodify.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonmodify.Image = global::TFG.Properties.Resources.mod;
-            this.toolStripButtonmodify.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonmodify.Name = "toolStripButtonmodify";
-            this.toolStripButtonmodify.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonmodify.Text = "Modificar";
-            this.toolStripButtonmodify.Click += new System.EventHandler(this.abreModificar);
-            // 
-            // toolStripButtonFiltro
-            // 
-            this.toolStripButtonFiltro.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonFiltro.Image = global::TFG.Properties.Resources.filtro;
-            this.toolStripButtonFiltro.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonFiltro.Name = "toolStripButtonFiltro";
-            this.toolStripButtonFiltro.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonFiltro.Text = "Filtrar";
-            this.toolStripButtonFiltro.Click += new System.EventHandler(this.abreVentanaFiltro);
-            // 
-            // toolStripButtonUndo
-            // 
-            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUndo.Image = global::TFG.Properties.Resources.icons8_rollback_48;
-            this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUndo.Name = "toolStripButtonUndo";
-            this.toolStripButtonUndo.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonUndo.Text = "Deshacer Cambios";
-            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
-            // 
-            // toolStripButtonSave
-            // 
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSave.Enabled = false;
-            this.toolStripButtonSave.Image = global::TFG.Properties.Resources.guardar;
-            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonSave.Text = "Guardar";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.guardar);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::TFG.Properties.Resources.icons8_user_48;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButton1.Text = "Ver cliente";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButtonLog
-            // 
-            this.toolStripButtonLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonLog.Image = global::TFG.Properties.Resources.icons8_folder_50;
-            this.toolStripButtonLog.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonLog.Name = "toolStripButtonLog";
-            this.toolStripButtonLog.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonLog.Text = "Archivos del cliente";
-            this.toolStripButtonLog.Click += new System.EventHandler(this.toolClienteLog_Click);
-            // 
-            // toolStripButtonCitas
-            // 
-            this.toolStripButtonCitas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCitas.Image = global::TFG.Properties.Resources.icons8_date_50;
-            this.toolStripButtonCitas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCitas.Name = "toolStripButtonCitas";
-            this.toolStripButtonCitas.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonCitas.Text = "Citas con clientes";
-            this.toolStripButtonCitas.Click += new System.EventHandler(this.verTodasLasCitasToolStripMenuItem_Click);
-            // 
-            // tsbSettings
-            // 
-            this.tsbSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSettings.Image = global::TFG.Properties.Resources.icons8_config_24;
-            this.tsbSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSettings.Name = "tsbSettings";
-            this.tsbSettings.Size = new System.Drawing.Size(34, 34);
-            this.tsbSettings.Text = "toolStripButton2";
-            this.tsbSettings.Click += new System.EventHandler(this.tsmConfig_Click);
-            // 
-            // toolStripButtonExportar
-            // 
-            this.toolStripButtonExportar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonExportar.Image = global::TFG.Properties.Resources.icons8_database_export_50;
-            this.toolStripButtonExportar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonExportar.Name = "toolStripButtonExportar";
-            this.toolStripButtonExportar.Size = new System.Drawing.Size(34, 34);
-            this.toolStripButtonExportar.Text = "Exportar Base de Datos";
-            this.toolStripButtonExportar.Click += new System.EventHandler(this.toolStripMenuItemExportDB_Click);
             // 
             // altaToolStripMenuItem
             // 
@@ -526,6 +374,27 @@ namespace TFG
             this.toolStripMenuItemCitas.Size = new System.Drawing.Size(44, 34);
             this.toolStripMenuItemCitas.ToolTipText = "Citas";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1,
+            this.toolStripStatusLabel1,
+            this.toolStripStatusError,
+            this.toolStripStatusRegistro});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 691);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1549, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(133, 23);
+            this.toolStripProgressBar1.Visible = false;
+            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -544,37 +413,168 @@ namespace TFG
             this.toolStripStatusError.Size = new System.Drawing.Size(20, 20);
             this.toolStripStatusError.Visible = false;
             // 
-            // verClienteToolStripMenuItem
+            // toolStripStatusRegistro
             // 
-            this.verClienteToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_user_48;
-            this.verClienteToolStripMenuItem.Name = "verClienteToolStripMenuItem";
-            this.verClienteToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.verClienteToolStripMenuItem.Text = "&Ver Cliente";
-            this.verClienteToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripStatusRegistro.Name = "toolStripStatusRegistro";
+            this.toolStripStatusRegistro.Size = new System.Drawing.Size(0, 16);
+            this.toolStripStatusRegistro.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
-            // verArchivosToolStripMenuItem
+            // toolStrip1
             // 
-            this.verArchivosToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_log_50;
-            this.verArchivosToolStripMenuItem.Name = "verArchivosToolStripMenuItem";
-            this.verArchivosToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.verArchivosToolStripMenuItem.Text = "&Ver archivos";
-            this.verArchivosToolStripMenuItem.Click += new System.EventHandler(this.toolClienteLog_Click);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAdd,
+            this.toolStripButtonDelete,
+            this.toolStripButtonmodify,
+            this.toolStripSeparator3,
+            this.toolStripButtonFiltro,
+            this.toolStripSeparator1,
+            this.toolStripButtonUndo,
+            this.toolStripButtonSave,
+            this.toolStripSeparator2,
+            this.toolStripButton1,
+            this.toolStripButtonLog,
+            this.toolStripButtonCitas,
+            this.tsbSettings,
+            this.toolStripSeparator4,
+            this.toolStripButtonExportar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1549, 37);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // eliminarToolStripMenuItem
+            // toolStripButtonAdd
             // 
-            this.eliminarToolStripMenuItem.Image = global::TFG.Properties.Resources.icons8_minus_50;
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.eliminarToolStripMenuItem.Text = "&Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
+            this.toolStripButtonAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAdd.Image = global::TFG.Properties.Resources.icons8_add_48;
+            this.toolStripButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAdd.Name = "toolStripButtonAdd";
+            this.toolStripButtonAdd.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonAdd.Text = "Añadir";
+            this.toolStripButtonAdd.Click += new System.EventHandler(this.toolStripButtonAdd_Click);
             // 
-            // modificarToolStripMenuItem
+            // toolStripButtonDelete
             // 
-            this.modificarToolStripMenuItem.Image = global::TFG.Properties.Resources.modify;
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.modificarToolStripMenuItem.Text = "&Modificar";
-            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.abreModificar);
+            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelete.Image = global::TFG.Properties.Resources.icons8_minus_50;
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonDelete.Text = "Eliminar";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
+            // 
+            // toolStripButtonmodify
+            // 
+            this.toolStripButtonmodify.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonmodify.Image = global::TFG.Properties.Resources.mod;
+            this.toolStripButtonmodify.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonmodify.Name = "toolStripButtonmodify";
+            this.toolStripButtonmodify.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonmodify.Text = "Modificar";
+            this.toolStripButtonmodify.Click += new System.EventHandler(this.abreModificar);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripButtonFiltro
+            // 
+            this.toolStripButtonFiltro.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFiltro.Image = global::TFG.Properties.Resources.filtro;
+            this.toolStripButtonFiltro.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFiltro.Name = "toolStripButtonFiltro";
+            this.toolStripButtonFiltro.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonFiltro.Text = "Filtrar";
+            this.toolStripButtonFiltro.Click += new System.EventHandler(this.abreVentanaFiltro);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripButtonUndo
+            // 
+            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUndo.Image = global::TFG.Properties.Resources.icons8_rollback_48;
+            this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUndo.Name = "toolStripButtonUndo";
+            this.toolStripButtonUndo.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonUndo.Text = "Deshacer Cambios";
+            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
+            // 
+            // toolStripButtonSave
+            // 
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSave.Enabled = false;
+            this.toolStripButtonSave.Image = global::TFG.Properties.Resources.guardar;
+            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSave.Name = "toolStripButtonSave";
+            this.toolStripButtonSave.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonSave.Text = "Guardar";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.guardar);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::TFG.Properties.Resources.icons8_user_48;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButton1.Text = "Ver cliente";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButtonLog
+            // 
+            this.toolStripButtonLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonLog.Image = global::TFG.Properties.Resources.icons8_folder_50;
+            this.toolStripButtonLog.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLog.Name = "toolStripButtonLog";
+            this.toolStripButtonLog.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonLog.Text = "Archivos del cliente";
+            this.toolStripButtonLog.Click += new System.EventHandler(this.toolClienteLog_Click);
+            // 
+            // toolStripButtonCitas
+            // 
+            this.toolStripButtonCitas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCitas.Image = global::TFG.Properties.Resources.icons8_date_50;
+            this.toolStripButtonCitas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCitas.Name = "toolStripButtonCitas";
+            this.toolStripButtonCitas.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonCitas.Text = "Citas con clientes";
+            this.toolStripButtonCitas.Click += new System.EventHandler(this.verTodasLasCitasToolStripMenuItem_Click);
+            // 
+            // tsbSettings
+            // 
+            this.tsbSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSettings.Image = global::TFG.Properties.Resources.icons8_config_24;
+            this.tsbSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSettings.Name = "tsbSettings";
+            this.tsbSettings.Size = new System.Drawing.Size(34, 34);
+            this.tsbSettings.Text = "toolStripButton2";
+            this.tsbSettings.Click += new System.EventHandler(this.tsmConfig_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripButtonExportar
+            // 
+            this.toolStripButtonExportar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonExportar.Image = global::TFG.Properties.Resources.icons8_database_export_50;
+            this.toolStripButtonExportar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonExportar.Name = "toolStripButtonExportar";
+            this.toolStripButtonExportar.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButtonExportar.Text = "Exportar Base de Datos";
+            this.toolStripButtonExportar.Click += new System.EventHandler(this.toolStripMenuItemExportDB_Click);
             // 
             // FormClientes
             // 
